@@ -23,6 +23,14 @@ gulp.task('styles', () => {
     .pipe(reload({stream: true}));
 });
 
+gulp.task('css', () => {
+  return gulp.src('app/styles/*.css')
+    .pipe($.plumber())
+    .pipe($.autoprefixer({browsers: ['> 1%', 'last 2 versions', 'Firefox ESR']}))
+    .pipe(gulp.dest('dist/styles'))
+    .pipe(reload({stream: true}));
+});
+
 function lint(files, options) {
   return () => {
     return gulp.src(files)
@@ -41,7 +49,7 @@ const testLintOptions = {
 gulp.task('lint', lint('app/scripts/**/*.js'));
 gulp.task('lint:test', lint('test/spec/**/*.js', testLintOptions));
 
-gulp.task('html', ['styles'], () => {
+gulp.task('html', ['styles', 'css'], () => {
   return gulp.src('app/*.html')
     .pipe($.useref({searchPath: ['.tmp', 'app', '.']}))
     // .pipe($.if('*.js', $.uglify()))
