@@ -29,6 +29,7 @@ var apiCall = Promise.all([
   // Document Ready?
   promiseToLoad()
 ]).then(function(data) {
+  console.log(data[0]);
   return data[0];
 });
 
