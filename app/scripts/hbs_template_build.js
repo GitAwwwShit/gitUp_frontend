@@ -18,6 +18,12 @@ function promiseToLoad() {
   });
 }
 
+function displayTemplate(selector, partial, context) {
+  console.log(context);
+  var template = Handlebars.compile(Handlebars.partials[partial]);
+  $(selector).html(template(context));
+}
+
 var apiCall;
 
 Promise.all([
@@ -33,7 +39,7 @@ Promise.all([
 ]).then(function(data) {
   apiCall = data[0];
   console.log(apiCall);
-  displayTemplate("#test", 'test', apiCall.userdata)
+  displayTemplate("#test", 'test', apiCall.userdata);
 });
 
 
@@ -41,9 +47,3 @@ Promise.all([
 //   if (val1 == val2) return options.fn(this);
 //   else return options.inverse(this);
 // });
-
-function displayTemplate(selector, partial, context) {
-  console.log(context);
-  var template = Handlebars.compile(Handlebars.partials[partial]);
-  $(selector).html(template(context));
-}
