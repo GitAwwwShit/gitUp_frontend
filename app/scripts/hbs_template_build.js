@@ -33,9 +33,8 @@ Promise.all([
 ]).then(function(data) {
   console.log(data[0]);
   apiCall = data[0];
+  console.log(apiCall);
 });
-
-console.log(apiCall);
 
 // Handlebars.registerHelper('compare', function(val1, val2, options) {
 //   if (val1 == val2) return options.fn(this);
