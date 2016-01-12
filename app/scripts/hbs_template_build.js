@@ -33,7 +33,7 @@ Promise.all([
 ]).then(function(data) {
   apiCall = data[0];
   console.log(apiCall);
-  displayTemplate("#test", 'test', apiCall.userdata))
+  displayTemplate("#test", 'test', apiCall.userdata)
 });
 
 
