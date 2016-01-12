@@ -1,5 +1,4 @@
 
-displayTemplate("#test", 'test', apiCall.userdata)
 
 // test handlebars template
 // var source   = $("#test").html();
