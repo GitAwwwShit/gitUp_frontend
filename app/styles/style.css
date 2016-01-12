@@ -7,3 +7,16 @@
 .update-activity {
 	margin-top: 23px;
 }
+.update-activity-reward {
+	margin-top: 0px;
+	color: white:
+}
+
+.ui-item.new-goal{
+	max-width:350px;
+	border:1px solid #eee;
+	box-shadow:2px 2px 0px 1px #51d466;
+	border-radius:4px;
+	background:#fff;
+	margin:20px auto;
+}
