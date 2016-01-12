@@ -32,7 +32,7 @@ var apiCall;
 Promise.all([
   // first ajax request
   $.ajax({
-    url: appVars.host + '/api',
+    url: appVars.host + '/api/' + req.user.id,
     method: 'get'
   }),
   // partial
