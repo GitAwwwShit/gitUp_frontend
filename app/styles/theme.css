@@ -447,9 +447,10 @@ testimonial: ui-217
 }
 .ui-179.login{
 	display: block;
-	position: relative;
+	position: absolute;
 	z-index: 100;
 	margin: 0px;
+	right: 25px;
 }
 
 /* Item */
