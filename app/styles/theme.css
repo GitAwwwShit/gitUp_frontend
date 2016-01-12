@@ -445,9 +445,23 @@ testimonial: ui-217
 .ui-179{
 	margin:50px 0px;
 }
+.ui-179.login{
+	display: block;
+	position: relative;
+	z-index: 100;
+	margin: 0px;
+}
+
 /* Item */
 .ui-179 .ui-item{
 	max-width:600px;
+	margin:0px auto;
+	border:1px solid #e8e8e8;
+	border-bottom:0px;
+	background:#fcfcfc;
+}
+.ui-item.login{
+	width:150px;
 	margin:0px auto;
 	border:1px solid #e8e8e8;
 	border-bottom:0px;
@@ -542,6 +556,15 @@ testimonial: ui-217
 	border-top:1px solid #e7e7e7;
 	display:none;
 	background:#fff;
+}
+/*button*/
+.ui-179 .ui-social ul li a{
+	width:100%;
+	display:block;
+	color:#fff;
+	font-size:14px;
+	border-radius:3px;
+	padding:5px 10px;
 }
 /* Company Name */
 .ui-179 .ui-details h5{
