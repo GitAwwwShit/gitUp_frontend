@@ -1,6 +1,3 @@
-var appvars = {
-  server: 'http://localhost:3000/'
-};
 
 function promisifyPartial(partial) {
   return new Promise(function(success, failure) {
