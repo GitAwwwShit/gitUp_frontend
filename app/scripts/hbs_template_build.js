@@ -21,7 +21,7 @@ function promiseToLoad() {
 var apiCall = Promise.all([
   // first ajax request
   $.ajax({
-    url: '/api',
+    url: 'http://localhost/api',
     method: 'get'
   }),
   // partial
