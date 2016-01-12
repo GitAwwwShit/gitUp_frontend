@@ -18,7 +18,9 @@ function promiseToLoad() {
   });
 }
 
-var apiCall = Promise.all([
+var apiCall;
+
+Promise.all([
   // first ajax request
   $.ajax({
     url: 'http://127.0.0.1:3000/api',
@@ -30,8 +32,10 @@ var apiCall = Promise.all([
   promiseToLoad()
 ]).then(function(data) {
   console.log(data[0]);
-  return data[0];
+  apiCall = data[0];
 });
+
+console.log(apiCall);
 
 // Handlebars.registerHelper('compare', function(val1, val2, options) {
 //   if (val1 == val2) return options.fn(this);
