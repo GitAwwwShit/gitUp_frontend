@@ -41,6 +41,7 @@ Promise.all([
 // });
 
 function displayTemplate(selector, partial, context) {
+  console.log(context);
   var template = Handlebars.compile(Handlebars.partials[partial]);
   $(selector).html(template(context));
 }
