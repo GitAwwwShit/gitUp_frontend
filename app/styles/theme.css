@@ -851,7 +851,7 @@ testimonial: ui-217
 }
 /* ui-81 */
 .ui-81{
-	margin:60px 0px;
+	margin:0px 0px;
 }
 /* Column Mobile */
 @media(max-width: 500px){
@@ -907,8 +907,8 @@ testimonial: ui-217
 	}
 }
 @media(max-width: 500px){
-	.ui-81 .ui-item .ui-skills .col-mob{
-		width:50%;
+	/*.ui-81 .ui-item .ui-skills .col-mob{
+		width:50%;*/
 	}
 }
 @media(max-width: 300px){
@@ -961,7 +961,7 @@ testimonial: ui-217
 	height:28px;
 	border-radius:100%;
 	line-height:28px;
-	color:#fff;
+	color:red;
 	text-align:center;
 	margin:0px 2px;
 }

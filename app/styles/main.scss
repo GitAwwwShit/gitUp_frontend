@@ -12,10 +12,10 @@ $icon-font-path: '../fonts/';
 }
 
 /* Space out content a bit */
-body {
-  padding-top: 20px;
-  padding-bottom: 20px;
-}
+// body {
+//   padding-top: 20px;
+//   padding-bottom: 20px;
+// }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
 .header,
@@ -570,36 +570,51 @@ hr {
 .margin-top-20{
 	margin-top: 20px;
 }
+.margin-top-2{
+	margin-top: 2px;
+}
+.t-20{
+  top: 20px;
+}
+.r-20{
+  right: 20px;
+}
+.b-20{
+  bottom: 20px;
+}
+.l-20{
+  left: 20px;
+}
 /* Social Media */
-.facebook {	background: #3280e7; }
-.facebook:hover { background: #134fa0; }
-.twitter { background: #32c8de;}
-.twitter:hover {	background: #188392;}
-.google-plus {background: #f96f4a;}
-.google-plus:hover {	background: #eb6440;}
-.linkedin  {	background: #729fda;}
-.linkedin:hover {background: #3069b6;}
-.pinterest {	background: #ed5441;}
-.pinterest:hover { background: #b72411;}
-.dropbox {background: #32c8de;}
-.dropbox:hover {	background: #188392;}
-.bitcoin {background: #f8a841;}
-.bitcoin:hover {	background: #cc7607;}
-.foursquare {background: #22bed4;}
-.foursquare:hover {background: #146f7c;}
-.flickr { background: #ff61e7;}
-.flickr:hover {	background: #fa00d4;}
-.github {background: #666666;}
-.github:hover {	background: #333333;}
-.instagram {	background: #d6917a;}
-.instagram:hover {background: #b35637;}
-.skype {background: #32c8de;}
-.skype:hover {background: #188392;}
-.tumblr {background: #84a1c8;}
-.tumblr:hover {background: #476d9f;}
-.vimeo {background: #32c8de;}
-.vimeo:hover {background: #188392;}
-.dribbble{background: #ff2edf;}
-.dribbble:hover {background: #c700a9;}
-.youtube {background: #ed5441;}
-.youtube:hover {	background: #b72411;}
+// .facebook {	background: #3280e7; }
+// .facebook:hover { background: #134fa0; }
+// .twitter { background: #32c8de;}
+// .twitter:hover {	background: #188392;}
+// .google-plus {background: #f96f4a;}
+// .google-plus:hover {	background: #eb6440;}
+// .linkedin  {	background: #729fda;}
+// .linkedin:hover {background: #3069b6;}
+// .pinterest {	background: #ed5441;}
+// .pinterest:hover { background: #b72411;}
+// .dropbox {background: #32c8de;}
+// .dropbox:hover {	background: #188392;}
+// .bitcoin {background: #f8a841;}
+// .bitcoin:hover {	background: #cc7607;}
+// .foursquare {background: #22bed4;}
+// .foursquare:hover {background: #146f7c;}
+// .flickr { background: #ff61e7;}
+// .flickr:hover {	background: #fa00d4;}
+// .github {background: #666666;}
+// .github:hover {	background: #333333;}
+// .instagram {	background: #d6917a;}
+// .instagram:hover {background: #b35637;}
+// .skype {background: #32c8de;}
+// .skype:hover {background: #188392;}
+// .tumblr {background: #84a1c8;}
+// .tumblr:hover {background: #476d9f;}
+// .vimeo {background: #32c8de;}
+// .vimeo:hover {background: #188392;}
+// .dribbble{background: #ff2edf;}
+// .dribbble:hover {background: #c700a9;}
+// .youtube {background: #ed5441;}
+// .youtube:hover {	background: #b72411;}
