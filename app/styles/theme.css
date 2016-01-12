@@ -1301,3 +1301,76 @@ testimonial: ui-217
 	color: #aaa;
 	font-weight:400;
 }
+/* ui-2 */
+.ui-2 .ui-item{
+	border:1px solid #ddd;
+	padding:25px 30px;
+	box-shadow: 3px 3px 0px 1px rgba(0,0,0,0.08);
+	max-width: 400px;
+	margin:40px auto;
+	background:#fff;
+	border-radius:4px;
+}
+/* Ui-head */
+/* heading */
+.ui-2 .ui-item .ui-head h3{
+	float:left;
+	font-size:22px;
+	font-weight:normal;
+}
+@media (max-width:1200px){
+	.ui-2 .ui-item .ui-head  h3{
+		float:none;
+	}
+}
+/* Button */
+.ui-2 .ui-item .ui-head a.btn{
+	float:right;
+	border:0px;
+	margin-top:6px;
+}
+
+@media (max-width:1200px){
+	.ui-2 .ui-item .ui-head  a.btn{
+		float:none;
+		margin-top:20px;
+	}
+}
+/* Ui-para */
+.ui-2 .ui-item .ui-para{
+	margin-top:30px;
+	border:1px solid #eee;
+	padding:10px 20px;
+	background:#fcfcfc;
+	box-shadow: 3px 3px 0px 1px rgba(0,0,0,0.05);
+}
+/* Paragraph */
+.ui-2 .ui-item .ui-para p{
+	font-size:13px;
+	line-height:28px;
+	color:#999;
+	font-style:italic;
+}
+/* Br-yellow */
+.ui-2 .ui-item .br-red{
+	border-top:5px solid #f75353;
+}
+/* Br-blue */
+.ui-2 .ui-item .br-lblue{
+	border-top:5px solid #32c8de !important;
+}
+/* Br-green */
+.ui-2 .ui-item .br-green{
+	border-top:5px solid #51d466 !important;
+}
+/* UI-list */
+.ui-2 .ui-item .ui-list{
+	margin-top:20px;
+}
+/* List */
+.ui-item .ui-list ul li {
+	font-size:14px;
+	line-height:40px;
+	margin-left:10px;
+	color:#888;
+}
