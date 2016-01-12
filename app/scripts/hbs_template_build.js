@@ -1,3 +1,6 @@
+var appVars = {
+  host: "http://127.0.0.1:3000"
+}
 
 function promisifyPartial(partial) {
   return new Promise(function(success, failure) {
@@ -29,7 +32,7 @@ var apiCall;
 Promise.all([
   // first ajax request
   $.ajax({
-    url: 'http://127.0.0.1:3000/api',
+    url: appVars.host + '/api',
     method: 'get'
   }),
   // partial
