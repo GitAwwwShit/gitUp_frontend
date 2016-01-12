@@ -30,6 +30,9 @@
     <p><a href="/auth/google">Login with Google</a></p>
     <p><a href="/auth/logout">Logout</a></p>
 
+    {{#if apiCall}}
+    <section id='test'></section>
+    {{/if}}
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
     <script>
@@ -62,7 +65,11 @@
     <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/tab.js"></script>
     <!-- endbuild -->
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.js"></script>
+
+
     <!-- build:js scripts/main.js -->
+    <script src="scripts/hbs_template_build.js"></script>
     <script src="scripts/main.js"></script>
     <!-- endbuild -->
   </body>
