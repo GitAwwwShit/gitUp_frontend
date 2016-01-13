@@ -19,7 +19,6 @@
 <!-- Font awesome CSS -->
 <link href="styles/font-awesome.min.css" rel="stylesheet">
 <!-- Main CSS -->
-<link href="styles/main.scss" rel="stylesheet">
 <link href="styles/theme.css" rel="stylesheet">
 <!-- Custom CSS -->
 <link href="styles/style.css" rel="stylesheet">
@@ -241,16 +240,27 @@
       <p class="pull-right"><a href="#">Back to top</a></p>
       <p>&copy; 2015 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
     </footer>
-      <!-- jQuery -->
+
+      <!-- build:js scripts/jquery.js -->
   		<script src="scripts/jquery.js"></script>
-  		<!-- Bootstrap JS -->
+      <!-- endbuild -->
+
+      <!-- build:js scripts/bootstrap.min.js -->
   		<script src="scripts/bootstrap.min.js"></script>
-  		<!-- Placeholder JS -->
+      <!-- endbuild -->
+
+      <!-- build:js scripts/placeholder.js -->
   		<script src="scripts/placeholder.js"></script>
+      <!-- endbuild -->
+
+      <!-- build:js scripts/respond.min.js -->
   		<!-- Respond JS for IE8 -->
   		<script src="scripts/respond.min.js"></script>
-  		<!-- HTML5 Support for IE -->
+      <!-- endbuild -->
+
+      <!-- build:js scripts/html5shiv.js -->
   		<script src="scripts/html5shiv.js"></script>
+      <!-- endbuild -->
 
       <!-- accordion animation script -->
       <script>
@@ -327,10 +337,13 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.js"></script>
 
+    <!-- build:js scripts/hbs_template_build.js -->
+    <script src="scripts/hbs_template_build.js"></script>
+    <!-- endbuild -->
 
     <!-- build:js scripts/main.js -->
-    <script src="scripts/hbs_template_build.js"></script>
     <script src="scripts/main.js"></script>
     <!-- endbuild -->
+
   </body>
 </html>

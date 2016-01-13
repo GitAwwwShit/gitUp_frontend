@@ -23,10 +23,24 @@ gulp.task('styles', () => {
     .pipe(reload({stream: true}));
 });
 
+gulp.task('css', () => {
+  return gulp.src('app/styles/*.css')
+    .pipe($.plumber())
+    .pipe(gulp.dest('dist/styles'))
+    .pipe(reload({stream: true}));
+});
+
 gulp.task('hbs_templates', () => {
   return gulp.src('app/templates/*.hbs')
     .pipe($.plumber())
     .pipe(gulp.dest('dist/templates'))
+    .pipe(reload({stream: true}));
+});
+
+gulp.task('bootstrapElements', () => {
+  return gulp.src('app/bootstrapElements/*.html')
+    .pipe($.plumber())
+    .pipe(gulp.dest('dist/bootstrapElements'))
     .pipe(reload({stream: true}));
 });
 
@@ -48,7 +62,7 @@ const testLintOptions = {
 gulp.task('lint', lint('app/scripts/**/*.js'));
 gulp.task('lint:test', lint('test/spec/**/*.js', testLintOptions));
 
-gulp.task('html', ['styles', 'hbs_templates'], () => {
+gulp.task('html', ['styles', 'css', 'hbs_templates', 'bootstrapElements'], () => {
   return gulp.src('app/*.html')
     .pipe($.useref({searchPath: ['.tmp', 'app', '.']}))
     // .pipe($.if('*.js', $.uglify()))
@@ -58,7 +72,7 @@ gulp.task('html', ['styles', 'hbs_templates'], () => {
 });
 
 gulp.task('images', () => {
-  return gulp.src('app/images/**/*')
+  return gulp.src('app/img/**/*')
     .pipe($.if($.if.isFile, $.cache($.imagemin({
       progressive: true,
       interlaced: true,
@@ -70,7 +84,7 @@ gulp.task('images', () => {
       console.log(err);
       this.end();
     })))
-    .pipe(gulp.dest('dist/images'));
+    .pipe(gulp.dest('dist/img'));
 });
 
 gulp.task('fonts', () => {
