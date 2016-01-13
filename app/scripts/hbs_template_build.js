@@ -38,7 +38,7 @@ Promise.all([
   // partial
   promisifyPartial({ name: 'test', file: '/templates/test.hbs' }),
   // Document Ready?
-  promiseToLoad()
+  // promiseToLoad()
 ]).then(function(data) {
   apiCall = data[0];
   console.log(apiCall);
