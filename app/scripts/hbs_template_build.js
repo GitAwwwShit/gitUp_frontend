@@ -13,6 +13,7 @@ function promisifyPartial(partial) {
   });
 }
 
+
 function promiseToLoad() {
   return new Promise(function(success) {
     $(document).ready(function() {
