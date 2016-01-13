@@ -26,6 +26,19 @@ body {
 }
 
 /* Custom page header */
+.hero {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.logo {
+  display: flex;
+  max-height: 305.5px;
+  max-width: 216px;
+}
+.callToAction {
+  display: flex;
+}
 .header {
   border-bottom: 1px solid #e5e5e5;
 
