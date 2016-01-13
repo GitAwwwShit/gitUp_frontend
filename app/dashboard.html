@@ -193,30 +193,103 @@
 </div>
 <!-- UI - X Ends -->
 
-<!-- UI - 81 Starts add activity add reward -->
-<div class="ui-81">
+<!-- UI - X Starts -->
+<div class="ui-179 new-goal">
   <div class="container">
-    <div class="row">
-      <div class="col-md-6 col-sm-6 col-xs-12 col-mob">
-        <!-- Main Item Starts -->
-        <div class="ui-item new-goal">
 
-          <!-- User Details Starts -->
-          <div class="ui-user clearfix">
-            <div class="update-activity-reward">
-
-              <h4><i class="fa fa-plus"></i> New Goal</h4>
-            </div>
-          </div>
-          <!-- User Details Ends -->
+      <div class="row">
+        <div class="col-md-6 col-sm-6 col-xs-12 col-mob">
+    <!-- Item Starts -->
+    <div class="ui-item new-goal">
+      <!-- Heading -->
+      <a href="#" class="ui-heading clearfix">
+        <!-- Left -->
+        <div class="update-activity-reward">
+          <h4>Add New Goal <i class="fa fa-angle-down"></i></h4>
         </div>
-        <!-- Main Item Ends -->
-      </div>
+      </a>
+      <!-- Details -->
+      <div class="ui-details">
 
+						<!-- Add New Goal Form -->
+						<div class="ui-form">
+							<form>
+								<!-- Goal -->
+								<div class="form-group">
+
+                  <!-- UI X -->
+                		<div class="ui-42">
+
+                			<div class="container">
+
+                				<div class="row">
+
+                					<div class="col-md-6">
+                						<!-- Drop down menu -->
+                						<div class="dd-menu dd-one">
+                							<a class="dd-link" href="#">
+                								<!-- Heading -->
+                								<h3>Select the Activity</h3>
+                								<div class="clearfix"></div>
+                							</a>
+                							<div class="dd-dropdown">
+                								<ul class="list-unstyled" role="menu">
+                									<li>
+                										<a href="#">
+                											Soccer
+                										</a>
+                									</li>
+                									<li>
+                										<a href="#">
+                											Playing Outside
+                										</a>
+                									</li>
+                									<li>
+                										<a href="#">
+                											Doing the Dishes
+                										</a>
+                									</li>
+                									<li>
+                										<a href="#">
+                											Dusting
+                										</a>
+                									</li>
+                								</ul>
+                							</div>
+                						</div>
+                					</div>
+                				</div>
+                			</div>
+                		</div>
+
+
+								</div>
+                <!-- Reward -->
+                <div class="checkbox">
+									<label>
+										<input type="checkbox" value="minutes" checked> Record in Minutes &nbsp;
+									</label>
+                  <label>
+										<input type="checkbox" value="amount"> Record by Amount
+									</label>
+								</div>
+                <!-- record time/amount -->
+								<div class="form-group">
+									<input type="reward" class="form-control" placeholder="Time to Goal? Reps to Goal?">
+								</div>
+								<!-- Reward -->
+								<div class="form-group">
+									<input type="reward" class="form-control" placeholder="What is the Reward?">
+								</div>
+								<!-- Button -->
+								<button type="submit" class="btn btn-block btn-green">Add Goal</button>
+							</form>
+						</div>
     </div>
+    <!-- Item Ends -->
   </div>
+</div></div></div>
 </div>
-<!-- UI - X Ends -->
 
   <!-- jQuery -->
 	<script src="scripts/jquery.js"></script>
@@ -253,6 +326,32 @@
 
 	</script>
 
+
+  <!-- drop down menu animation script -->
+  <script>
+			/* Drop Down */
+			$(document).ready(function() {
+				var hidden = true;
+				$('.dd-link').click(function(e) {
+					e.preventDefault();
+					if (hidden){
+					   $(this).next('.dd-dropdown').fadeToggle(200, function(){hidden = false;});
+					}
+				});
+
+				$('html').click(function() {
+					if (!hidden) {
+						$('.dd-dropdown').fadeOut();
+						hidden=true;
+					}
+				});
+
+				$('.dd-dropdown').click(function(event) {
+					event.stopPropagation();
+				});
+			});
+
+		</script>
   <!-- progress bar animation script -->
   <script>
     $(document).ready(function(){
@@ -300,6 +399,8 @@
   <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/collapse.js"></script>
   <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/tab.js"></script>
   <!-- endbuild -->
+
+  <script src="scripts/bootstrap.min.js"></script>
 
   <!-- build:js scripts/main.js -->
   <script src="scripts/main.js"></script>

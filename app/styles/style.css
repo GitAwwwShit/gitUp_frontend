@@ -20,3 +20,27 @@
 	background:#fff;
 	margin:20px auto;
 }
+
+.ui-179.new-goal{
+	display: block;
+	z-index: 100;
+	margin: 0px;
+	right: 25px;
+}
+.ui-179 .ui-item .ui-user{
+	padding:15px;
+	border-bottom:1px solid #eee;
+}
+.ui-form form input,
+.ui-form form textarea{
+	box-shadow:none !important;
+	padding:6px 5px;
+	color:grey;
+	border:0px;
+	border-bottom:1px solid rgba(255,255,255,0.5);
+	background:transparent;
+	border-radius:0px;
+}
+.ui-42 .container .dd-menu {
+	margin-left: -30px;
+}
