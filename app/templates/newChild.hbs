@@ -1,18 +1,3 @@
-
-
-<div class="row dashboard-top navbar-fixed-top">
-  <div class="col-xs-8 col-md-8 l-20">
-    <p><img src="https://upload.wikimedia.org/wikipedia/commons/6/68/Grass_dsc08672-nevit.jpg" hieght="50px" width="50px" id='profile-pic' data-user-id="{{api.id}}"> gitUp - Welcome {{ api.username }}</p>
-  </div>
-  <!-- LOGOUT BUTTON -->
-  <a href="/auth/logout">
-    <div class="btn btn-grey col-xs-2 col-md-3 pull-right r-30 margin-top-2">Logout</div>
-  </a>
-</div>
-
-
-<div id="children-holder">
-{{#each api.children}}
 <div class="child-template">
   <!-- UI - 81 Starts -->
   <div class="ui-81">
@@ -299,10 +284,50 @@
                   <!-- Select the Activity -->
                   <div class="form-group">
 
-                    <!-- Enter the Reward -->
-    								<div class="form-group">
-    									<input type="reward" class="form-control" placeholder="Enter the Reward">
-    								</div>
+                    <!-- UI X -->
+                      <div class="ui-42">
+
+                        <div class="container">
+
+                          <div class="row">
+
+                            <div class="col-md-6">
+                              <!-- Drop down menu -->
+                              <div class="dd-menu dd-one">
+                                <a class="dd-link" href="#">
+                                  <!-- Heading -->
+                                  <h3>Select the Reward</h3>
+                                  <div class="clearfix"></div>
+                                </a>
+                                <div class="dd-dropdown">
+                                  <ul class="list-unstyled" role="menu">
+                                    <li>
+                                      <a href="#">
+                                        Youtube Time
+                                      </a>
+                                    </li>
+                                    <li>
+                                      <a href="#">
+                                        Ipad Time
+                                      </a>
+                                    </li>
+                                    <li>
+                                      <a href="#">
+                                        Netflix Time
+                                      </a>
+                                    </li>
+                                    <li>
+                                      <a href="#">
+                                        Cookies
+                                      </a>
+                                    </li>
+                                  </ul>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
 
   								<!-- Button -->
   								<button type="submit" class="btn btn-block btn-green">Add Goal</button>
@@ -312,46 +337,5 @@
       <!-- Item Ends -->
     </div>
   </div></div></div>
-  </div>
-</div>
-{{/each}}
-</div>
-<!-- UI - 179 Add New Child Starts -->
-<div class="ui-179 new-goal">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-6 col-sm-6 col-xs-12 col-mob">
-      <!-- Item Starts -->
-        <div class="ui-item new-goal">
-        <!-- Heading -->
-          <a href="#" class="ui-heading clearfix">
-          <!-- Left -->
-            <div class="update-activity-reward">
-              <h4>Add New Child <i class="fa fa-angle-down"></i></h4>
-            </div>
-          </a>
-        <!-- Details -->
-          <div class="ui-details">
-
-          <!-- Add New Child Form -->
-            <div class="ui-form">
-              <form>
-              <!-- Enter Childs Name -->
-                <div class="form-group">
-                  <input type="childName" class="form-control" placeholder="Enter Childs Name">
-                </div>
-              <!-- Child DOB -->
-                <div class="form-group">
-                  <input type="childDOB" class="form-control" placeholder="Enter Childs DOB">
-                </div>
-              <!-- Button -->
-                <button type="submit" class="btn btn-block btn-green" id='addChild'>Add Child</button>
-              </form>
-            </div>
-          </div>
-        <!-- Item Ends -->
-        </div>
-      </div>
-    </div>
   </div>
 </div>

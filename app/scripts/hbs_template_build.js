@@ -38,6 +38,7 @@ Promise.all([
   // partial
   promisifyPartial({ name: 'dashboard', file: '/templates/dashboard.hbs' }),
   promisifyPartial({ name: 'goalUpdate', file: '/templates/goalUpdate.hbs' }),
+  promisifyPartial({ name: 'newChild', file: '/templates/newChild.hbs' })
   // Document Ready?
   // promiseToLoad()
 ]).then(function(api) {

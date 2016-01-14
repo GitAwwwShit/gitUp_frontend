@@ -1,3 +1,7 @@
+var appVars = {
+  host: "http://127.0.0.1:3000"
+}
+
 // fix Facebook hash
 if (window.location.hash && window.location.hash === "#_=_") {
   if (window.history && history.replaceState) {
@@ -43,7 +47,7 @@ $(document).on('keypress', '.update-goal', function(e) {  // finish putting IDs 
       newAmount: newAmount,
       newPercent: Math.trunc(newPercent)
     };
-    $.ajax('/', {             // what's our api route for update goal?
+    $.ajax(appVars.host + '/api', {             // what's our api route for update goal?
       data: goalUpdate,
       type: 'POST'
     })
@@ -68,7 +72,7 @@ $(document).on('click', '.remove-goal', function(e) {
   var cGoalID = $(this).attr("data-cGoalIDremove");
   var goalRemove = {cGoalID: cGoalID};
   e.preventDefault();
-  $.ajax('/', {         // what's ourt api route for delete goal?
+  $.ajax(appVars.host + '/api', {         // what's ourt api route for delete goal?
     data: goalRemove,
     type: 'DELTE'
   })
@@ -77,4 +81,26 @@ $(document).on('click', '.remove-goal', function(e) {
   })
   $('div[data-RemoveGoal='+cGoalID+']').remove();
   $('div[data-RemoveGoalSummary='+cGoalID+']').remove();
+})
+
+// ajax to insert child
+$(document).on('click', '#addChild', function(e) {
+  var childAdd = {};
+  childAdd.first_name = $('input[type=childName]').val();
+  childAdd.gender = 'unisex';
+  childAdd.dob = $('input[type=childDOB]').val();
+  childAdd.user_id = $('img[id=profile-pic]').attr("data-user-id");
+  console.log(childAdd);
+  e.preventDefault();
+  $.ajax(appVars.host + '/api/child', {
+    data: childAdd,
+    type: 'POST'
+  })
+  .done(function(){
+    $.ajax(appVars.host + '/api')
+    .done(function(apiData){
+      console.log(apiData);
+      // displayTemplate($('#children-holder'), 'newChild', apiData);
+    })
+  })
 })
