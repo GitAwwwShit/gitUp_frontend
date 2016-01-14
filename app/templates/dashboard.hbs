@@ -27,7 +27,10 @@
               <!-- User Image -->
               <a href="#"><img src="img/ui-81/1.jpg" alt="" class="img-responsive" /></a>
               <!-- UserName And Designation -->
-              <h2><a href="#">{{first_name}}</a> <span>{{#each ../shit}} {{titles}} {{/each}}</span></h2>
+              <h2>
+                <a href="#">{{first_name}}</a>
+                <span>{{../shit.titles.one}}</span>
+              </h2>
             </div>
             <!-- User Details Ends -->
 
@@ -43,7 +46,7 @@
                     <!-- Progress -->
                     <div class="progress">
                       <!-- Progress Bar -->
-                      <div class="progress-bar {{../colors}}" role="progressbar" aria-valuenow="{{entry_amount_sum}}" aria-valuemin="0" aria-valuemax="{{goal_amount}}" style="width: {{goal_percent}}%;"></div>
+                      <div class="progress-bar {{../../shit.colors}}" role="progressbar" aria-valuenow="{{entry_amount_sum}}" aria-valuemin="0" aria-valuemax="{{goal_amount}}" style="width: {{goal_percent}}%;"></div>
                     </div>
                   </div>
                 </div>

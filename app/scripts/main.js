@@ -14,3 +14,28 @@ if (window.location.hash && window.location.hash === "#_=_") {
     document.body.scrollLeft = scroll.left;
   }
 }
+
+function displayTemplate(selector, partial, context) {
+  var template = Handlebars.compile(Handlebars.partials[partial]);
+  $(selector).html(template(context));
+}
+
+// ajax goal update
+$(document).on('keypress', '', function(e) {  // finish putting IDs in dashboard template and filling in two variables below
+  var cGoalID =
+  var goalUpdate = {};
+  if (e.which == 13) {
+    e.preventDefault();
+    $.ajax('/', {
+      data: goalUpdate,
+      type: 'PUT'
+    })
+    .done(function(goalUpdateData){
+      $('#'+cGoalID+'.process-bar').remove;
+      displayTemplate('#'+cGoalID+'.progress', 'goalUpdate', goalUpdate);
+    })
+  }
+}
+
+// ajax to delete goal
+$(document).on('click', '', function(e)
