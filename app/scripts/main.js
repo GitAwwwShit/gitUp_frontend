@@ -21,21 +21,57 @@ function displayTemplate(selector, partial, context) {
 }
 
 // ajax goal update
-$(document).on('keypress', '', function(e) {  // finish putting IDs in dashboard template and filling in two variables below
-  var cGoalID =
-  var goalUpdate = {};
+$(document).on('keypress', '.update-goal', function(e) {  // finish putting IDs in dashboard template and filling in two variables below
+  console.log(this);
+  var cGoalID = $(this).attr("data-cGoalIDupdate");
+  var removePB = $('div[data-progressUpdate='+cGoalID+']');
+  var insertPB = $('div[data-progressInsert='+cGoalID+']');
+  var currentAmount = parseFloat(removePB.attr("aria-valuenow"));
+  var goalAmount = removePB.attr("aria-valuemax");
+  var currentPercent = removePB.attr('style');
   if (e.which == 13) {
     e.preventDefault();
-    $.ajax('/', {
+    var addAmount = parseFloat($(this).val());
+    var newAmount = (currentAmount + addAmount);
+    var newPercent = (newAmount / goalAmount)*100;
+    var goalUpdate = {
+      cGoalID: cGoalID,
+      currentAmount: currentAmount,
+      goalAmount: goalAmount,
+      newAmount: newAmount,
+      newPercent: Math.trunc(newPercent)
+    };
+    $.ajax('/', {             // what's our api route for update goal?
       data: goalUpdate,
-      type: 'PUT'
+      type: 'POST'
     })
     .done(function(goalUpdateData){
-      $('#'+cGoalID+'.process-bar').remove;
-      displayTemplate('#'+cGoalID+'.progress', 'goalUpdate', goalUpdate);
+
     })
+    // console.log('this: '+this);
+    console.log(removePB[0]);
+    console.log(insertPB[0]);
+    console.log('currentAmount: '+currentAmount);
+    console.log('addAmount: '+addAmount);
+    console.log(goalUpdate);
+    console.log('currentPercent: '+currentPercent);
+    removePB.remove();
+    displayTemplate(insertPB[0], 'goalUpdate', goalUpdate);
+    // displayTemplate(insertPB[0], 'goalUpdate', goalUpdate);
   }
-}
+})
 
 // ajax to delete goal
-$(document).on('click', '', function(e)
+$(document).on('click', '.remove-goal', function(e) {
+  var cGoalID = $(this).attr("data-cGoalIDremove");
+  var goalRemove = {cGoalID: cGoalID};
+  e.preventDefault();
+  $.ajax('/', {         // what's ourt api route for delete goal?
+    data: goalRemove,
+    type: 'DELTE'
+  })
+  .done(function(goalRemoveData){
+
+  })
+  $('div[data-RemoveGoal='+cGoalID+']').remove();
+})

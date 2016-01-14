@@ -44,9 +44,9 @@
                     <!-- Heading -->
                     <h4>Goal {{id}} </h4>
                     <!-- Progress -->
-                    <div class="progress">
+                    <div class="progress" data-progressInsert={{id}}>
                       <!-- Progress Bar -->
-                      <div class="progress-bar {{../../shit.colors}}" role="progressbar" aria-valuenow="{{entry_amount_sum}}" aria-valuemin="0" aria-valuemax="{{goal_amount}}" style="width: {{goal_percent}}%;"></div>
+                      <div class="progress-bar {{../../shit.colors}}" data-progressUpdate={{id}} role="progressbar" aria-valuenow="{{entry_amount_sum}}" aria-valuemin="0" aria-valuemax="{{goal_amount}}" style="width: {{goal_percent}}%;"></div>
                     </div>
                   </div>
                 </div>
@@ -101,7 +101,7 @@
   <!-- UI - X Ends -->
   {{#each cGoals}}
   <!-- UI - 179 test test test test -->
-  <div class="ui-179 activity">
+  <div class="ui-179 activity" data-RemoveGoal={{id}}>
     <div class="container">
 
         <div class="row">
@@ -154,11 +154,11 @@
 
                   <!-- record time/amount -->
   								<div class="form-group">
-  									<input type="reward" class="form-control" placeholder="Enter Amount">
+  									<input type="reward" class="form-control update-goal" data-cGoalIDupdate="{{id}}" placeholder="Enter Amount">
   								</div>
 
   								<!-- Button -->
-  								<button type="submit" class="btn btn-red">Delete</button>
+  								<button type="submit" class="btn btn-red remove-goal" data-cGoalIDremove="{{id}}">Delete</button>
   							</form>
   						</div>
       </div>
