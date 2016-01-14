@@ -42,17 +42,18 @@ Promise.all([
 ]).then(function(api) {
   var data = {};
   data.shit = {
-    colors: {
-      red: 'bg-red',
-      lblue: 'bg-lblue',
-      green: 'bg-green',
-      yellow: 'bg-yellow'
-    },
     titles: {
       1: 'Little Shit',
       2: 'SOB',
       3: 'Mistake 1',
       4: 'Love Child'
+    },
+    colors: {
+      red: 'bg-red',
+      lblue: 'bg-lblue',
+      green: 'bg-green',
+      yellow: 'bg-yellow',
+      purple: 'bg-purple'
     }
   };
   data.api = api[0];

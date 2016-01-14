@@ -1,13 +1,13 @@
 
 
-    <div class="row dashboard-top">
-      <div class="col-xs-8 col-md-8 l-20">
-        <p><img src="https://upload.wikimedia.org/wikipedia/commons/6/68/Grass_dsc08672-nevit.jpg" hieght="50px" width="50px"> gitUp - Welcome {{ api.username }}</p>
-      </div>
-      <a href="/auth/logout">
-        <div class="btn btn-grey col-xs-2 col-md-3 pull-right r-30 margin-top-2">Logout</div>
-      </a>
-    </div>
+<div class="row dashboard-top">
+  <div class="col-xs-8 col-md-8 l-20">
+    <p><img src="https://upload.wikimedia.org/wikipedia/commons/6/68/Grass_dsc08672-nevit.jpg" hieght="50px" width="50px"> gitUp - Welcome {{ api.username }}</p>
+  </div>
+  <a href="/auth/logout">
+    <div class="btn btn-grey col-xs-2 col-md-3 pull-right r-30 margin-top-2">Logout</div>
+  </a>
+</div>
 {{#each api.children}}
 <div class="child-template">
   <!-- UI - 81 Starts -->
@@ -39,7 +39,7 @@
                     <!-- Progress -->
                     <div class="progress">
                       <!-- Progress Bar -->
-                      <div class="progress-bar bg-lblue" role="progressbar" aria-valuenow="{{entry_amount_sum}}" aria-valuemin="0" aria-valuemax="{{goal_amount}}" style="width: 10%;"></div>
+                      <div class="progress-bar {{../colors}}" role="progressbar" aria-valuenow="{{entry_amount_sum}}" aria-valuemin="0" aria-valuemax="{{goal_amount}}" style="width: {{goal_percent}}%;"></div>
                     </div>
                   </div>
                 </div>
@@ -106,9 +106,9 @@
         <div class="ui-user clearfix">
           <!-- User Image -->
           <div class="pull-left">
-            <a href="#"><img src="img/activities/{{id}}.png" alt="" class="img-responsive" /></a>
+            <a href="#"><img src="img/activities/{{goal_id}}.png" alt="" class="img-responsive" /></a>
             <!-- UserName And Designation -->
-            <h2><a href="#">Goal {{goal_id}}</a></h2>
+            <h2><a href="#">{{../first_name}}: Goal {{id}}</a></h2>
           </div>
         </div>
         <!-- User Details Ends -->
@@ -171,7 +171,7 @@
                   <!-- Progress -->
                   <div class="progress">
                     <!-- Progress Bar -->
-                    <div class="progress-bar bg-red" role="progressbar" aria-valuenow="{{entry_amount_sum}}" aria-valuemin="0" aria-valuemax="{{goal_amount}}" style="width: 10%;"></div>
+                    <div class="progress-bar {{../colors}}" role="progressbar" aria-valuenow="{{entry_amount_sum}}" aria-valuemin="0" aria-valuemax="{{goal_amount}}" style="width: {{goal_percent}}%;"></div>
                   </div>
                 </div>
               </div>
