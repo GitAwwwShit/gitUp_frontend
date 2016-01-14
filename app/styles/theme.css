@@ -903,6 +903,7 @@ a.ui-heading.clearfix.update {
 .ui-81 .ui-item .ui-user{
 	padding:15px;
 	border-bottom:1px solid #eee;
+	border-left: 5px solid orange;
 }
 /* User Image */
 .ui-81 .ui-item .ui-user a > img{
