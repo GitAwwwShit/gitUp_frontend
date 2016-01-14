@@ -25,7 +25,9 @@ $(document).on('keypress', '.update-goal', function(e) {  // finish putting IDs 
   console.log(this);
   var cGoalID = $(this).attr("data-cGoalIDupdate");
   var removePB = $('div[data-progressUpdate='+cGoalID+']');
+  var removePB2 = $('div[data-progressUpdate2='+cGoalID+']');
   var insertPB = $('div[data-progressInsert='+cGoalID+']');
+  var insertPB2 = $('div[data-progressInsert2='+cGoalID+']');
   var currentAmount = parseFloat(removePB.attr("aria-valuenow"));
   var goalAmount = removePB.attr("aria-valuemax");
   var currentPercent = removePB.attr('style');
@@ -49,7 +51,7 @@ $(document).on('keypress', '.update-goal', function(e) {  // finish putting IDs 
 
     })
     // console.log('this: '+this);
-    console.log(removePB[0]);
+    console.log(removePB);
     console.log(insertPB[0]);
     console.log('currentAmount: '+currentAmount);
     console.log('addAmount: '+addAmount);
@@ -57,7 +59,7 @@ $(document).on('keypress', '.update-goal', function(e) {  // finish putting IDs 
     console.log('currentPercent: '+currentPercent);
     removePB.remove();
     displayTemplate(insertPB[0], 'goalUpdate', goalUpdate);
-    // displayTemplate(insertPB[0], 'goalUpdate', goalUpdate);
+    displayTemplate(insertPB2[0], 'goalUpdate', goalUpdate);
   }
 })
 
@@ -74,4 +76,5 @@ $(document).on('click', '.remove-goal', function(e) {
 
   })
   $('div[data-RemoveGoal='+cGoalID+']').remove();
+  $('div[data-RemoveGoalSummary='+cGoalID+']').remove();
 })
