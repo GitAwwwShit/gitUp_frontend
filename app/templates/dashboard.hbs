@@ -1,17 +1,14 @@
 
 
-<div class="row dashboard-top">
-  <div class="col-xs-8 col-md-8 l-20">
-    <p><img src="https://upload.wikimedia.org/wikipedia/commons/6/68/Grass_dsc08672-nevit.jpg" hieght="50px" width="50px"> gitUp - Welcome {{ api.username }}</p>
-  </div>
-  <!-- LOGOUT BUTTON -->
-  <a href="/auth/logout">
-    <div class="btn btn-grey col-xs-2 col-md-3 pull-right r-30 margin-top-2">Logout</div>
-  </a>
+<div class="row dashboard-top navbar-fixed-top">
+    <div class="col-xs-8 col-md-8 l-20">
+      <p><img src="https://upload.wikimedia.org/wikipedia/commons/6/68/Grass_dsc08672-nevit.jpg" hieght="50px" width="50px"> gitUp - Welcome {{ api.username }}</p>
+    </div>
+    <!-- LOGOUT BUTTON -->
+    <a href="/auth/logout">
+      <div class="btn btn-grey col-xs-2 col-md-3 pull-right r-30 margin-top-2">Logout</div>
+    </a>
 </div>
-
-
-
 
 {{#each api.children}}
 <div class="child-template">
