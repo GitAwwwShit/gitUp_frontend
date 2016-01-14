@@ -22,7 +22,6 @@ function promiseToLoad() {
 }
 
 function displayTemplate(selector, partial, context) {
-  console.log(context);
   var template = Handlebars.compile(Handlebars.partials[partial]);
   $(selector).html(template(context));
 }
@@ -36,13 +35,13 @@ Promise.all([
     method: 'get'
   }),
   // partial
-  promisifyPartial({ name: 'test', file: '/templates/test.hbs' }),
+  promisifyPartial({ name: 'dashboard', file: '/templates/dashboard.hbs' }),
   // Document Ready?
-  promiseToLoad()
+  // promiseToLoad()
 ]).then(function(data) {
   apiCall = data[0];
   console.log(apiCall);
-  displayTemplate("#test", 'test', apiCall);
+  displayTemplate("#dashboard", 'dashboard', apiCall);
 });
 
 
