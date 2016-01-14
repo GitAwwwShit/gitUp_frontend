@@ -1,0 +1,157 @@
+<!doctype html>
+<html class="no-js" lang="">
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>gitUp | Dashboard</title>
+
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <!-- Place favicon.ico in the root directory -->
+
+    <!-- build:css styles/vendor.css -->
+    <!-- bower:css -->
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <!-- bootstrap links-->
+
+    <link href="styles/bootstrap.min.css" rel="stylesheet">
+    <!-- Font awesome CSS -->
+    <link href="styles/font-awesome.min.css" rel="stylesheet">
+    <!-- Main CSS -->
+    <link href="styles/theme.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="styles/style.css" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="#">
+
+
+    <!-- build:css styles/main.css -->
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- endbuild -->
+
+    <!-- build:js scripts/vendor/modernizr.js -->
+    <script src="/bower_components/modernizr/modernizr.js"></script>
+    <!-- endbuild -->
+  </head>
+  <body>
+
+
+  <main id='dashboard'></main>
+
+  <!-- jQuery -->
+	<script src="scripts/jquery.js"></script>
+	<!-- Bootstrap JS -->
+	<script src="scripts/bootstrap.min.js"></script>
+	<!-- Placeholder JS -->
+	<script src="scripts/placeholder.js"></script>
+	<!-- Respond JS for IE8 -->
+	<script src="scripts/respond.min.js"></script>
+	<!-- HTML5 Support for IE -->
+	<script src="scripts/html5shiv.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.js"></script>
+
+  <!-- build:js scripts/hbs_template_build.js -->
+  <script src="scripts/hbs_template_build.js"></script>
+  <!-- endbuild -->
+
+  <!-- accordion animation script -->
+  <script>
+    <!-- SlideUP and SlideDown -->
+    $(document).ready(function(){
+      <!-- OnClick Event -->
+      $(document).on("click", ".ui-item a.ui-heading", function(e){
+        e.preventDefault();
+        if($(this).find("i").hasClass("fa-angle-down")){		//Icon Class Angel Down
+          $(this).next(".ui-details").slideDown(400);		//Slide Down
+          $(this).find("i").removeClass("fa-angle-down");		//Remove Icon Class Angel Down
+          $(this).find("i").addClass("fa-angle-up");		//Add Icon Class Angel Up
+        }
+        else{
+          $(this).next(".ui-details").slideUp(400);			//Slide Up
+          $(this).find("i").removeClass("fa-angle-up");		//Remove Icon Class Angel Up
+          $(this).find("i").addClass("fa-angle-down");		//Add Icon Class Angel Down
+        }
+      });
+
+
+    });
+
+  </script>
+
+    <!-- drop down menu animation script -->
+    <script>
+  			/* Drop Down */
+  			$(document).ready(function() {
+  				var hidden = true;
+  				$(document).on('click', '.dd-link', function(e) {
+  					e.preventDefault();
+  					if (hidden){
+  					   $(this).next('.dd-dropdown').fadeToggle(200, function(){hidden = false;});
+  					}
+  				});
+
+  				$('html').click(function() {
+  					if (!hidden) {
+  						$('.dd-dropdown').fadeOut();
+  						hidden=true;
+  					}
+  				});
+
+  				$('.dd-dropdown').click(function(event) {
+  					event.stopPropagation();
+  				});
+  			});
+
+  		</script>
+    <!-- progress bar animation script -->
+    <script>
+      $(document).ready(function(){
+        $(document).on('each', ".ui-progress-bar", function(){
+          var max = $(this).attr("data-valuemax");
+          //alert(max);
+          $(this).animate({
+            width: max + "%"
+          },
+          {
+            duration: 2000
+          });
+        });
+      });
+    </script>
+
+
+  <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+  <script>
+    (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+    function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+    e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+    e.src='https://www.google-analytics.com/analytics.js';
+    r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+    ga('create','UA-XXXXX-X');ga('send','pageview');
+  </script>
+
+  <!-- build:js scripts/vendor.js -->
+  <!-- bower:js -->
+  <script src="/bower_components/jquery/dist/jquery.js"></script>
+  <!-- endbower -->
+  <!-- endbuild -->
+
+  <script src="scripts/plugins.js"></script>
+
+  <script src="scripts/bootstrap.min.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.js"></script>
+
+  <!-- build:js scripts/hbs_template_build.js -->
+  <script src="scripts/hbs_template_build.js"></script>
+  <!-- endbuild -->
+
+  <!-- build:js scripts/main.js -->
+  <script src="scripts/main.js"></script>
+        <!-- endbuild -->
+  </body>
+</html>
