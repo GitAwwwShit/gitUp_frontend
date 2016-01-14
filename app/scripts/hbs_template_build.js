@@ -37,16 +37,17 @@ Promise.all([
   }),
   // partial
   promisifyPartial({ name: 'dashboard', file: '/templates/dashboard.hbs' }),
+  promisifyPartial({ name: 'goalUpdate', file: '/templates/goalUpdate.hbs' }),
   // Document Ready?
   // promiseToLoad()
 ]).then(function(api) {
   var data = {};
   data.shit = {
     titles: {
-      1: 'Little Shit',
-      2: 'SOB',
-      3: 'Mistake 1',
-      4: 'Love Child'
+      one: 'Little Shit',
+      two: 'SOB',
+      three: 'Mistake 1',
+      four: 'Love Child'
     },
     colors: {
       red: 'bg-red',
@@ -62,7 +63,7 @@ Promise.all([
 });
 
 
-
+// titles: ['Little Shit', 'SOB', 'Mistake 1', 'Love Child'],
 
 // Handlebars.registerHelper('compare', function(val1, val2, options) {
 //   if (val1 == val2) return options.fn(this);
