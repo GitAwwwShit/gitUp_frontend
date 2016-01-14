@@ -2,13 +2,13 @@
 
     <div class="row dashboard-top">
       <div class="col-xs-8 col-md-8 l-20">
-        <p><img src="https://upload.wikimedia.org/wikipedia/commons/6/68/Grass_dsc08672-nevit.jpg" hieght="50px" width="50px"> gitUp - Welcome {{ username }}</p>
+        <p><img src="https://upload.wikimedia.org/wikipedia/commons/6/68/Grass_dsc08672-nevit.jpg" hieght="50px" width="50px"> gitUp - Welcome {{ api.username }}</p>
       </div>
       <a href="/auth/logout">
         <div class="btn btn-grey col-xs-2 col-md-3 pull-right r-30 margin-top-2">Logout</div>
       </a>
     </div>
-{{#each children}}
+{{#each api.children}}
 <div class="child-template">
   <!-- UI - 81 Starts -->
   <div class="ui-81">
@@ -23,26 +23,28 @@
               <!-- User Image -->
               <a href="#"><img src="img/ui-81/1.jpg" alt="" class="img-responsive" /></a>
               <!-- UserName And Designation -->
-              <h2><a href="#">{{first_name}}</a> <span>UI/Web Designer</span></h2>
+              <h2><a href="#">{{first_name}}</a> <span>{{#each ../shit}} {{titles}} {{/each}}</span></h2>
             </div>
             <!-- User Details Ends -->
 
             <!-- Skills Starts -->
             <div class="ui-skills">
               <div class="row">
+                {{#each cGoals}}
                 <div class="col-md-6 col-sm-6 col-xs-6 col-mob">
                   <!-- Item -->
                   <div class="uis-item">
                     <!-- Heading -->
-                    <h4>Activity 1</h4>
+                    <h4>Goal {{id}} </h4>
                     <!-- Progress -->
                     <div class="progress">
                       <!-- Progress Bar -->
-                      <div class="progress-bar bg-red" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;"></div>
+                      <div class="progress-bar bg-lblue" role="progressbar" aria-valuenow="{{entry_amount_sum}}" aria-valuemin="0" aria-valuemax="{{goal_amount}}" style="width: 10%;"></div>
                     </div>
                   </div>
                 </div>
-                <div class="col-md-6 col-sm-6 col-xs-6 col-mob">
+                {{/each}}
+                {{!-- <div class="col-md-6 col-sm-6 col-xs-6 col-mob">
                   <!-- Item -->
                   <div class="uis-item">
                     <!-- Heading -->
@@ -77,7 +79,7 @@
                       <div class="progress-bar bg-yellow" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%;"></div>
                     </div>
                   </div>
-                </div>
+                </div> --}}
               </div>
             </div>
             <!-- Skills Ends -->
@@ -90,7 +92,7 @@
     </div>
   </div>
   <!-- UI - X Ends -->
-
+  {{#each cGoals}}
   <!-- UI - 179 test test test test -->
   <div class="ui-179 activity">
     <div class="container">
@@ -104,9 +106,9 @@
         <div class="ui-user clearfix">
           <!-- User Image -->
           <div class="pull-left">
-            <a href="#"><img src="img/ui-81/1.jpg" alt="" class="img-responsive" /></a>
+            <a href="#"><img src="img/activities/{{id}}.png" alt="" class="img-responsive" /></a>
             <!-- UserName And Designation -->
-            <h2><a href="#">Activity 1</a></h2>
+            <h2><a href="#">Goal {{id}}</a></h2>
           </div>
         </div>
         <!-- User Details Ends -->
@@ -153,7 +155,9 @@
   							</form>
   						</div>
       </div>
+
       <!-- Item Ends -->
+
       <!-- Skills Starts -->
       <div class="ui-81">
         <div class="ui-item">
@@ -167,7 +171,7 @@
                   <!-- Progress -->
                   <div class="progress">
                     <!-- Progress Bar -->
-                    <div class="progress-bar bg-red" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;"></div>
+                    <div class="progress-bar bg-red" role="progressbar" aria-valuenow="{{entry_amount_sum}}" aria-valuemin="0" aria-valuemax="{{goal_amount}}" style="width: 10%;"></div>
                   </div>
                 </div>
               </div>
@@ -199,6 +203,8 @@
   </div>
   </div>
   </div>
+  {{/each}}
+
   <!-- UI - 179 Add New Goal Starts -->
   <div class="ui-179 new-goal">
     <div class="container">

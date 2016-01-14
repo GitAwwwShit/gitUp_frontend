@@ -26,7 +26,8 @@ function displayTemplate(selector, partial, context) {
   $(selector).html(template(context));
 }
 
-var apiCall;
+// var data = {};
+
 
 Promise.all([
   // first ajax request
@@ -38,10 +39,25 @@ Promise.all([
   promisifyPartial({ name: 'dashboard', file: '/templates/dashboard.hbs' }),
   // Document Ready?
   // promiseToLoad()
-]).then(function(data) {
-  apiCall = data[0];
-  console.log(apiCall);
-  displayTemplate("#dashboard", 'dashboard', apiCall);
+]).then(function(api) {
+  var data = {};
+  data.shit = {
+    colors: {
+      red: 'bg-red',
+      lblue: 'bg-lblue',
+      green: 'bg-green',
+      yellow: 'bg-yellow'
+    },
+    titles: {
+      1: 'Little Shit',
+      2: 'SOB',
+      3: 'Mistake 1',
+      4: 'Love Child'
+    }
+  };
+  data.api = api[0];
+  console.log(data);
+  displayTemplate("#dashboard", 'dashboard', data);
 });
 
 
