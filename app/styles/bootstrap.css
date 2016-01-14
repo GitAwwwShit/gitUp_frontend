@@ -738,6 +738,12 @@ pre code {
   padding-left: 10px;
   padding-right: 10px;
 }
+#cover{
+  display: flex;
+  justify-content: space-around;
+  padding: 10px
+}
+
 @media (min-width: 768px) {
   .container {
     width: 740px;
