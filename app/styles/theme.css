@@ -902,7 +902,7 @@ a.ui-heading.clearfix.update {
 /* User Details */
 .ui-81 .ui-item .ui-user{
 	padding:15px;
-	border-bottom:1px solid #eee;
+	/*border-bottom:1px solid #eee;*/
 }
 /* User Image */
 .ui-81 .ui-item .ui-user a > img{

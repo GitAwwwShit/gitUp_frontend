@@ -4,10 +4,15 @@
   <div class="col-xs-8 col-md-8 l-20">
     <p><img src="https://upload.wikimedia.org/wikipedia/commons/6/68/Grass_dsc08672-nevit.jpg" hieght="50px" width="50px"> gitUp - Welcome {{ api.username }}</p>
   </div>
+  <!-- LOGOUT BUTTON -->
   <a href="/auth/logout">
     <div class="btn btn-grey col-xs-2 col-md-3 pull-right r-30 margin-top-2">Logout</div>
   </a>
 </div>
+
+
+
+
 {{#each api.children}}
 <div class="child-template">
   <!-- UI - 81 Starts -->
@@ -17,9 +22,8 @@
         <div class="col-md-6 col-sm-6 col-xs-12 col-mob">
           <!-- Main Item Starts -->
           <div class="ui-item">
-
             <!-- User Details Starts -->
-            <div class="ui-user clearfix">
+            <div class="ui-user clearfix bg-lorange">
               <!-- User Image -->
               <a href="#"><img src="img/ui-81/1.jpg" alt="" class="img-responsive" /></a>
               <!-- UserName And Designation -->
@@ -28,10 +32,10 @@
             <!-- User Details Ends -->
 
             <!-- Skills Starts -->
-            <div class="ui-skills">
+            <div class="ui-skills bg-lorange">
               <div class="row">
                 {{#each cGoals}}
-                <div class="col-md-6 col-sm-6 col-xs-6 col-mob">
+                <div class="col-md-6 col-sm-6 col-xs-6 col-mob" id="{{id}}">
                   <!-- Item -->
                   <div class="uis-item">
                     <!-- Heading -->
@@ -98,7 +102,7 @@
     <div class="container">
 
         <div class="row">
-          <div class="col-md-6 col-sm-6 col-xs-12 col-mob">
+          <div class="col-md-6 col-sm-6 col-xs-12 col-mob" id="{{id}}">
       <!-- Item Starts -->
       <div class="ui-item activity">
 
@@ -304,3 +308,42 @@
   </div>
 </div>
 {{/each}}
+<!-- UI - 179 Add New Child Starts -->
+<div class="ui-179 new-goal">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-sm-6 col-xs-12 col-mob">
+      <!-- Item Starts -->
+        <div class="ui-item new-goal">
+        <!-- Heading -->
+          <a href="#" class="ui-heading clearfix">
+          <!-- Left -->
+            <div class="update-activity-reward">
+              <h4>Add New Child <i class="fa fa-angle-down"></i></h4>
+            </div>
+          </a>
+        <!-- Details -->
+          <div class="ui-details">
+
+          <!-- Add New Goal Form -->
+            <div class="ui-form">
+              <form>
+              <!-- Enter Childs Name -->
+                <div class="form-group">
+                  <input type="childName" class="form-control" placeholder="Enter Childs Name">
+                </div>
+              <!-- Reward -->
+                <div class="form-group">
+                  <input type="childDOB" class="form-control" placeholder="Enter Childs DOB">
+                </div>
+              <!-- Button -->
+                <button type="submit" class="btn btn-block btn-green">Add Child</button>
+              </form>
+            </div>
+          </div>
+        <!-- Item Ends -->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
