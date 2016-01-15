@@ -1,0 +1,80 @@
+.br-red {
+	border-top: 5px solid #f75353;
+}
+/*.ui-tootltip .youtube i {
+	color: red;
+}*/
+.update-activity {
+	margin-top: -45px;
+	margin-right: 15px;
+}
+.update-activity-reward {
+	margin-top: 0px;
+	color: white:
+}
+
+.ui-item.new-goal{
+	max-width:350px;
+	border:1px solid #eee;
+	box-shadow:2px 2px 0px 1px #51d466;
+	border-radius:4px;
+	background:#fff;
+	margin:20px auto;
+}
+.ui-item.activity{
+	max-width:350px;
+	border:1px solid #eee;
+	box-shadow:2px 2px 0px 1px rgba(0,0,0,0.07);
+	border-radius:4px;
+	background:#fff;
+	margin:20px auto;
+}
+.ui-179.new-goal{
+	display: block;
+	z-index: 100;
+	margin: 0px;
+	right: 25px;
+}
+.ui-179 .ui-item .ui-user{
+	padding:15px;
+	/*border-bottom:1px solid #eee;*/
+}
+.ui-form form input,
+.ui-form form textarea{
+	box-shadow:none !important;
+	padding:6px 5px;
+	color:grey;
+	border:0px;
+	border-bottom:1px solid rgba(255,255,255,0.5);
+	background:transparent;
+	border-radius:0px;
+}
+.ui-42 .container .dd-menu {
+	margin-left: -30px;
+}
+body > div.ui-179.activity > div > div > div > div > div.ui-81 > div{
+	box-shadow: none;
+}
+body > div.ui-179.activity > div > div > div > div > div.ui-81 > div {
+	margin-bottom: 0px;
+}
+.btn.btn-green{
+	margin-bottom: 15px;
+}
+.btn.btn-red{
+	margin-bottom: 15px;
+}
+.dashboard-top{
+	height: 50px;
+  padding: 5px;
+	background-color: rgba(255,255,255,.95);
+	box-shadow: 2px 2px 0px 1px rgba(0,0,0,0.07);
+}
+}
+.spacer75{
+	height: 75px;
+}
+.remove-child{
+	margin-top: -40px;
+	margin-bottom: 0px;
+}

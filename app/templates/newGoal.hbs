@@ -1,0 +1,107 @@
+<div class="ui-179 activity cGoal" data-childID-for-cGoal={{../id}} data-RemoveGoal={{id}}>
+  <div class="container">
+
+      <div class="row">
+        <div class="col-md-6 col-sm-6 col-xs-12 col-mob" id="{{id}}">
+    <!-- Item Starts -->
+    <div class="ui-item activity">
+
+      <!-- User Details Starts -->
+      <div class="ui-user clearfix">
+        <!-- User Image -->
+        <div class="pull-left">
+          <a href="#"><img src="img/activities/{{goal_id}}.png" alt="" class="img-responsive" /></a>
+          <!-- UserName And Designation -->
+          <h2><a href="#">{{../first_name}}: Goal {{id}}</a></h2>
+        </div>
+      </div>
+      <!-- User Details Ends -->
+
+      <!-- update button -->
+      <a href="#" class="ui-heading clearfix update">
+        <div class="update-activity pull-right">
+          update <i class="fa fa-angle-down"></i>
+        </div>
+      </a>
+      <!-- Details -->
+      <div class="ui-details">
+
+            <!-- Add New Goal Form -->
+            <div class="ui-form">
+              <form>
+                <!-- Goal -->
+                <div class="form-group">
+
+                  <!-- UI X -->
+                    <div class="ui-42">
+
+                      <div class="container">
+
+                        <div class="row">
+
+                          <div class="col-md-6">
+
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+
+                </div>
+
+                <!-- record time/amount -->
+                <div class="form-group">
+                  <input type="reward" class="form-control update-goal" data-cGoalIDupdate="{{id}}" placeholder="Enter Amount">
+                </div>
+
+                <!-- Button -->
+                <button type="submit" class="btn btn-red remove-goal" data-cGoalIDremove="{{id}}">Delete</button>
+              </form>
+            </div>
+    </div>
+
+    <!-- Item Ends -->
+
+    <!-- Skills Starts -->
+    <div class="ui-81">
+      <div class="ui-item">
+        <div class="ui-skills">
+          <div class="row">
+            <div class="col-md-10 col-sm-10 col-xs-10 col-mob">
+              <!-- Item -->
+              <div class="uis-item">
+                <!-- Heading -->
+                <h4>Goal</h4>
+                <!-- Progress -->
+                <div class="progress" data-progressInsert2={{id}}>
+                  <!-- Progress Bar -->
+                  <div class="progress-bar {{../colors}}" data-progressUpdate2={{id}} role="progressbar" aria-valuenow="{{entry_amount_sum}}" aria-valuemin="0" aria-valuemax="{{goal_amount}}" style="width: {{goal_percent}}%;"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Badges Starts -->
+        <div class="ui-social">
+          <!-- Heading -->
+          <h4>Badges</h4>
+          <!-- youtube -->
+          <a href="#" class="ui-tootltip youtube" data-toggle="tooltip" data-placement="top" title="youtube"><i class="fa fa-youtube-square"></i></a>
+          <!-- Twitter -->
+          <a href="#" class="ui-tootltip" data-toggle="tooltip" data-placement="top" title="Twitter"><i class="fa fa-twitter twitter"></i></a>
+          <!-- LinkedIn -->
+          <a href="#" class="ui-tootltip" data-toggle="tooltip" data-placement="top" title="LinkedIn"><i class="fa fa-linkedin linkedin"></i></a>
+          <!-- Google Plus -->
+          <a href="#" class="ui-tootltip" data-toggle="tooltip" data-placement="top" title="Google Plus"><i class="fa fa-google-plus google-plus"></i></a>
+        </div>
+        <!-- Badges Ends -->
+      </div>
+    </div>
+
+
+  </div>
+</div>
+
+</div>
+</div>
+</div>
