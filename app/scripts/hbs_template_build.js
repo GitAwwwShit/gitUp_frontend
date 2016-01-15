@@ -1,5 +1,5 @@
 var appVars = {
-  host: "http://127.0.0.1:3000"
+  host: "http://huber007.dyndns:3000"
 }
 var activities = {}
 Handlebars.registerHelper("activities_name", function(id) {
