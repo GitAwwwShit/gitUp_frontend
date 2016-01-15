@@ -147,15 +147,15 @@ $(document).on('click', '.add-cGoal', function(e) {
   };
   console.log(cGoalAdd);
   e.preventDefault();
-  // $.ajax(appVars.host + '/api/makeGoal', {
-  //   data: cGoalAdd,
-  //   type: 'POST'
-  // })
-  // .done(function(){
-  //   $.ajax(appVars.host + '/api')
-  //   .done(function(apiData){
-  //     var newKidID = Object.keys(apiData.children).pop()
-  //
-  //   })
-  // })
+  $.ajax(appVars.host + '/api/makeGoal', {
+    data: cGoalAdd,
+    type: 'POST'
+  })
+  .done(function(){
+    $.ajax(appVars.host + '/api')
+    .done(function(apiData){
+      // var newKidID = Object.keys(apiData.children).pop()
+
+    })
+  })
 })
