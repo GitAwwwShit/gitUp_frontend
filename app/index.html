@@ -113,7 +113,7 @@
   								<!-- heading -->
   								<h3>Set Goals</h3>
   								<!-- Button -->
-  								<a href="#setgoals" class="btn redlanding"><strong>Learn more...</strong></a>
+  								<a href="#set" class="btn redlanding"><strong>Learn more...</strong></a>
   							</div>
   							<div class="clearfix"></div>
   							<!-- Ui-para -->
@@ -150,7 +150,7 @@
   								<!-- Heading -->
   								<h3>Reward Achievements</h3>
   								<!-- UI-button -->
-  								<a href="#rewards" class="btn greenlanding"><strong>Learn more...</strong></a>
+  								<a href="#reward" class="btn greenlanding"><strong>Learn more...</strong></a>
   							</div>
   							<div class="clearfix"></div>
   							<!-- Blockquote -->
@@ -165,7 +165,7 @@
 
     <!-- START THE FEATURETTES -->
 
-    <hr id='setgoals' class="featurette-divider ui-para br-red">
+    <hr id="set" class="featurette-divider ui-para br-red">
 
     <div class="row featurette">
       <div class="col-md-7">
@@ -177,7 +177,7 @@
       </div>
     </div>
 
-    <hr id='track' class="featurette-divider ui-para br-lblue">
+    <hr id="track" class="featurette-divider ui-para br-lblue">
 
       <div class="row featurette">
         <div class="container-fluid col-md-5 hidden-xxs">
@@ -189,7 +189,7 @@
         </div>
       </div>
 
-    <hr id='rewards' class="featurette-divider ui-para br-green">
+    <hr id="rewards" class="featurette-divider ui-para br-green">
 
     <div class="row featurette">
       <div class="col-md-7">
@@ -272,7 +272,25 @@
           });
         });
       </script>
-      
+
+      <!-- SmoothScrollScript -->
+      <script>
+      $('a[href*=#]:not([href=#])').click(function() {
+          if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') 
+              || location.hostname == this.hostname) {
+
+              var target = $(this.hash);
+              target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+                 if (target.length) {
+                   $('html,body').animate({
+                       scrollTop: target.offset().top
+                  }, 1000);
+                  return false;
+              }
+          }
+      });
+      </script>
+
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
     <script>
       (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
