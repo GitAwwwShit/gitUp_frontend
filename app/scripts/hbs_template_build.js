@@ -71,8 +71,12 @@ Promise.all([
       for (var i = 0; i < result.length; i++) {
         activities[result[i].id]= result[i].activity_name;
       }
-      data.activities = activities;
+      //data.activityObj = activities;
     displayTemplate("#dashboard", 'dashboard', data);
+    var activitySelect = $('#activitySelect')
+    for (var i = 0; i < result.length; i++) {
+      activitySelect.append("<option value='"+result[i].id+"'>"+result[i].activity_name+"</option>")
+    }
   })
 });
 
