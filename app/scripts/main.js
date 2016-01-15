@@ -75,11 +75,12 @@ $(document).on('keypress', '.update-goal', function(e) {  // finish putting IDs 
 // ajax to delete goal
 $(document).on('click', '.remove-goal', function(e) {
   var cGoalID = $(this).attr("data-cGoalIDremove");
+  console.log(cGoalID);
   var goalRemove = {cGoalID: cGoalID};
   e.preventDefault();
-  $.ajax(appVars.host + '/api', {         // what's ourt api route for delete goal?
+  $.ajax(appVars.host + '/api/deletegoal/'+cGoalID, {         // what's our api route for delete goal?
     data: goalRemove,
-    type: 'DELTE'
+    type: 'DELETE'
   })
   .done(function(goalRemoveData){
 
