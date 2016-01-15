@@ -151,11 +151,12 @@ $(document).on('click', '.add-cGoal', function(e) {
     data: cGoalAdd,
     type: 'POST'
   })
-  .done(function(){
-    $.ajax(appVars.host + '/api')
-    .done(function(apiData){
-      // var newKidID = Object.keys(apiData.children).pop()
-
-    })
+  .done(function(results){
+    console.log(results);
+    // $.ajax(appVars.host + '/api')
+    // .done(function(apiData){
+    //   var newKidID = Object.keys(apiData.children).pop()
+    //
+    // })
   })
 })
