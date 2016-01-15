@@ -72,6 +72,7 @@ Promise.all([
       for (var i = 0; i < result.length; i++) {
         activities[result[i].id]= result[i].activity_name;
       }
+      data.activities = activities;
     displayTemplate("#dashboard", 'dashboard', data);
   })
 });
