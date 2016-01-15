@@ -1,5 +1,5 @@
 var appVars = {
-  host: "http://127.0.0.1:3000"
+  host: "http://huber007.dyndns.org:3000"
 }
 
 // fix Facebook hash
@@ -141,7 +141,7 @@ $(document).on('click', '.add-cGoal', function(e) {
   var childId = $(this).attr("data-childID-for-cGoal")
   var cGoalAdd = {
     childId: childId,
-    activityID: '',
+    activityID: $('#activitySelect').val(),
     amount: $('input[data-gAmount='+childId+']').val(),
     reward: $('input[data-gReward='+childId+']').val()
   };
