@@ -79,7 +79,7 @@ Promise.all([
       }
       //data.activityObj = activities;
     displayTemplate("#dashboard", 'dashboard', data);
-    var activitySelect = $('#activitySelect')
+    var activitySelect = $('.activitySelect')
     for (var i = 0; i < result.length; i++) {
       activitySelect.append("<option value='"+result[i].id+"'>"+result[i].activity_name+"</option>")
     }
