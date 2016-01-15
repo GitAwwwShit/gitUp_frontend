@@ -42,7 +42,7 @@ $icon-font-path: '../fonts/';
   display: flex;
 }
 .row.featurette {
-  display: flex;
+  display: inline-flex;
   justify-content: center;
   align-items: stretch;
   padding: 0px 15px;
@@ -51,17 +51,40 @@ $icon-font-path: '../fonts/';
 .features  {
   padding: 0px 15px;
 }
-@media screen and (max-width: 300px) {
+
+
+
+@media screen and (max-width: 450px) {
   .hidden-xxs {
     display: none;
   }
-}
-
-.featurehead {
-  h2  {
-    font-size: medium;
+  h2.featurehead {
+    font-size: 16px;
+    line-height: 20px;
+  }
+  .lead {
+    font-size: 12px;
+    line-height: normal;
   }
 }
+
+@media screen and (max-width: 750px) {
+  h2.featurehead {
+    font-size: 20px;
+    line-height: 25px;
+  }
+  .lead {
+    font-size: 14px;
+    line-height: normal;
+  }
+}
+
+
+// .featurehead {
+//   h2  {
+//     font-size: medium;
+//   }
+// }
 
 .header {
   border-bottom: 1px solid #e5e5e5;
@@ -95,6 +118,27 @@ $icon-font-path: '../fonts/';
     font-size: 21px;
     padding: 14px 24px;
   }
+}
+
+.btn.greenlanding {
+	color: #ffffff;
+	background: #51d466;
+	border: 1px solid #30c247;
+  padding-top: 15px;
+}
+
+.btn.lbluelanding {
+	color: #ffffff;
+	background: #32c8de;
+	border: 1px solid #1faabe;
+  padding-top: 15px;
+}
+
+.btn.redlanding {
+	color: #ffffff;
+	background: #ed5441;
+	border: 1px solid #e52d16;
+  padding-top: 15px;
 }
 
 /* Supporting marketing content */
@@ -381,6 +425,12 @@ hr {
 	color: #ffffff;
 	background: #51d466;
 	border: 1px solid #30c247;
+}
+.btn.greenlanding {
+	color: #ffffff;
+	background: #51d466;
+	border: 1px solid #30c247;
+  margin-top: 15px;
 }
 .btn.btn-green:hover,
 .btn.btn-green:focus,
