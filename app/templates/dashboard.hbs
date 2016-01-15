@@ -2,7 +2,7 @@
 
 <div class="row dashboard-top navbar-fixed-top">
   <div class="col-xs-8 col-md-8 l-20">
-    <p><img src="https://upload.wikimedia.org/wikipedia/commons/6/68/Grass_dsc08672-nevit.jpg" hieght="50px" width="50px" id='profile-pic' data-user-id="{{api.id}}"> gitUp - Welcome {{ api.username }}</p>
+    <p><img src="{{api.user_image}}" hieght="50px" width="50px" id='profile-pic' data-user-id="{{api.id}}"> gitUp - Welcome {{ api.username }}</p>
   </div>
   <!-- LOGOUT BUTTON -->
   <a href="/auth/logout">
@@ -42,7 +42,7 @@
                   <!-- Item -->
                   <div class="uis-item">
                     <!-- Heading -->
-                    <h4>{{activities id}} </h4>
+                    <h4>{{activities activity_id}} </h4>
                     <!-- Progress -->
                     <div class="progress" data-progressInsert={{id}}>
                       <!-- Progress Bar -->
@@ -101,7 +101,7 @@
   <!-- UI - X Ends -->
   {{#each cGoals}}
   <!-- UI - 179 test test test test -->
-  <div class="ui-179 activity cGoal" data-childID-for-cGoal={{../id}} data-RemoveGoal={{id}}>
+  <div class="ui-179 activity" data-RemoveGoal={{id}}>
     <div class="container">
 
         <div class="row">
@@ -115,7 +115,7 @@
           <div class="pull-left">
             <a href="#"><img src="img/activities/{{goal_id}}.png" alt="" class="img-responsive" /></a>
             <!-- UserName And Designation -->
-            <h2><a href="#">{{../first_name}}: {{activities id}}</a></h2>
+            <h2><a href="#">{{../first_name}}: {{activities activity_id}}</a></h2>
           </div>
         </div>
         <!-- User Details Ends -->
@@ -245,37 +245,11 @@
 
                   					<div class="col-md-6">
                   						<!-- Drop down menu -->
-                  						<div class="dd-menu dd-one">
-                  							<a class="dd-link" href="#">
-                  								<!-- Heading -->
-                  								<h3>Select the Activity</h3>
-                  								<div class="clearfix"></div>
-                  							</a>
-                  							<div class="dd-dropdown">
-                  								<ul class="list-unstyled" role="menu">
-                  									<li>
-                  										<a href="#">
-                  											Soccer
-                  										</a>
-                  									</li>
-                  									<li>
-                  										<a href="#">
-                  											Playing Outside
-                  										</a>
-                  									</li>
-                  									<li>
-                  										<a href="#">
-                  											Doing the Dishes
-                  										</a>
-                  									</li>
-                  									<li>
-                  										<a href="#">
-                  											Dusting
-                  										</a>
-                  									</li>
-                  								</ul>
-                  							</div>
-                  						</div>
+                              <div class="form-group">
+                               <label for="activitySelect">Select an Activity</label>
+                               <select class="form-control" id="activitySelect">
+                               </select>
+                              </div>
                   					</div>
                   				</div>
                   			</div>
@@ -294,7 +268,7 @@
   								</div>
                   <!-- record time/amount -->
   								<div class="form-group">
-  									<input type="reward" class="form-control" data-gAmount="{{id}}" placeholder="Time to Goal? Reps to Goal?">
+  									<input type="reward" class="form-control" placeholder="Time to Goal? Reps to Goal?">
   								</div>
   								<!-- Reward -->
                   <!-- Select the Activity -->
@@ -302,11 +276,11 @@
 
                     <!-- Enter the Reward -->
     								<div class="form-group">
-    									<input type="reward" class="form-control" data-gReward="{{id}}" placeholder="Enter the Reward">
+    									<input type="reward" class="form-control" placeholder="Enter the Reward">
     								</div>
 
   								<!-- Button -->
-  								<button type="submit" data-childID-for-cGoal="{{id}}" class="btn btn-block btn-green add-cGoal">Add Goal</button>
+  								<button type="submit" class="btn btn-block btn-green">Add Goal</button>
   							</form>
   						</div>
       </div>
