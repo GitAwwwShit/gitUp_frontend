@@ -24,6 +24,11 @@ function displayTemplate(selector, partial, context) {
   $(selector).html(template(context));
 }
 
+function insertTemplate(selector, partial, context) {
+  var template = Handlebars.compile(Handlebars.partials[partial]);
+  $(selector).append(template(context));
+}
+
 // ajax goal update
 $(document).on('keypress', '.update-goal', function(e) {  // finish putting IDs in dashboard template and filling in two variables below
   console.log(this);
@@ -99,8 +104,9 @@ $(document).on('click', '#addChild', function(e) {
   .done(function(){
     $.ajax(appVars.host + '/api')
     .done(function(apiData){
-      console.log(apiData);
-      // displayTemplate($('#children-holder'), 'newChild', apiData);
+      var newKid = Object.keys(apiData.children).pop()
+      console.log(apiData.children[newKid]);
+      insertTemplate($('#children-holder'), 'newChild', apiData.children[newKid]);
     })
   })
 })
