@@ -52,12 +52,12 @@ $(document).on('keypress', '.update-goal', function(e) {  // finish putting IDs 
       newAmount: newAmount,
       newPercent: Math.trunc(newPercent)
     };
-    $.ajax(appVars.host + '/api', {             // what's our api route for update goal?
+    $.ajax(appVars.host + '/api/entry/'+cGoalID+'/'+addAmount, {             // what's our api route for update goal?
       data: goalUpdate,
       type: 'POST'
     })
     .done(function(goalUpdateData){
-
+      console.log(goalUpdateData);
     })
     // console.log('this: '+this);
     console.log(removePB);
@@ -83,7 +83,7 @@ $(document).on('click', '.remove-goal', function(e) {
     type: 'DELETE'
   })
   .done(function(goalRemoveData){
-
+    console.log(goalRemoveData);
   })
   $('div[data-RemoveGoal='+cGoalID+']').remove();
   $('div[data-RemoveGoalSummary='+cGoalID+']').remove();
@@ -105,9 +105,33 @@ $(document).on('click', '#addChild', function(e) {
   .done(function(){
     $.ajax(appVars.host + '/api')
     .done(function(apiData){
-      var newKid = Object.keys(apiData.children).pop()
-      console.log(apiData.children[newKid]);
-      insertTemplate($('#children-holder'), 'newChild', apiData.children[newKid]);
+      var newKidID = Object.keys(apiData.children).pop()
+      var newKid = apiData.children[newKidID];
+      newKid.titles = {
+            one: 'Little Shit',
+            two: 'SOB',
+            three: 'Mistake 1',
+            four: 'Love Child'
+          }
+      console.log(newKid);
+      insertTemplate($('#children-holder'), 'newChild', newKid);
     })
   })
+})
+
+// ajax to delete child
+$(document).on('click', '.remove-child', function(e) {
+  console.log(this);
+  var childID = $(this).attr("data-childIDremove");
+  console.log(childID);
+  e.preventDefault();
+  $.ajax(appVars.host + '/api/delete/'+childID, {
+    data: {},
+    type: 'DELETE'
+  })
+  .done(function(removedKid){
+    console.log(removedKid);
+  })
+  $('div[data-RemoveChild='+childID+']').remove();
+  console.log($('div[data-RemoveChild='+childID+']').remove())
 })
