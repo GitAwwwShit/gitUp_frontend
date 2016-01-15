@@ -141,11 +141,11 @@ $(document).on('click', '.add-cGoal', function(e) {
   var childId = $(this).attr("data-childID-for-cGoal")
   var cGoalAdd = {
     childId: childId,
-    activityID: $('#activitySelect').val(),
+    activityID: $('select[data-childID-activity='+childId+']').val(),
     amount: $('input[data-gAmount='+childId+']').val(),
     reward: $('input[data-gReward='+childId+']').val()
   };
-  console.log(cGoalAdd.reward);
+  console.log(cGoalAdd);
   e.preventDefault();
   // $.ajax(appVars.host + '/api/makeGoal', {
   //   data: cGoalAdd,
