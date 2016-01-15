@@ -135,3 +135,27 @@ $(document).on('click', '.remove-child', function(e) {
   $('div[data-RemoveChild='+childID+']').remove();
   console.log($('div[data-RemoveChild='+childID+']').remove())
 })
+
+// ajax to add cGoal
+$(document).on('click', '.add-cGoal', function(e) {
+  var childId = $(this).attr("data-childID-for-cGoal")
+  var cGoalAdd = {
+    childId: childId,
+    activityID: '',
+    amount: $('input[data-gAmount='+childId+']').val(),
+    reward: $('input[data-gReward='+childId+']').val()
+  };
+  console.log(cGoalAdd.reward);
+  e.preventDefault();
+  // $.ajax(appVars.host + '/api/makeGoal', {
+  //   data: cGoalAdd,
+  //   type: 'POST'
+  // })
+  // .done(function(){
+  //   $.ajax(appVars.host + '/api')
+  //   .done(function(apiData){
+  //     var newKidID = Object.keys(apiData.children).pop()
+  //
+  //   })
+  // })
+})
