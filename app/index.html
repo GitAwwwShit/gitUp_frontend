@@ -46,7 +46,7 @@
     <p><a href="/auth/logout">Logout</a></p> -->
 
     <header>
-      <div>
+      <div id='top'>
 
         <!-- UI - X Starts -->
         <div class="ui-179 login">
@@ -113,7 +113,7 @@
   								<!-- heading -->
   								<h3>Set Goals</h3>
   								<!-- Button -->
-  								<a href="#" class="btn redlanding"><strong>Learn more...</strong></a>
+  								<a href="#setgoals" class="btn redlanding"><strong>Learn more...</strong></a>
   							</div>
   							<div class="clearfix"></div>
   							<!-- Ui-para -->
@@ -121,16 +121,6 @@
   								<!-- Paragraph -->
   								<p>Set goals for your children related to activities, chores and responsibilities.</p>
   							</div>
-  							<!-- Ui-list -->
-  							<!-- <div class="ui-list">
-  								<ul class="list-unstyled">
-  									<li><i class="fa fa-check green"></i><strong> &nbsp; &nbsp;Storage - 10GB</strong></li>
-  									<li><i class="fa fa-check green"></i> &nbsp; &nbsp;Bandwidth - 1GB</li>
-  									<li><i class="fa fa-close red"></i> &nbsp; &nbsp;Email-Id - 5</li>
-  									<li><i class="fa fa-check green"></i> &nbsp; &nbsp;Sql-Database - 5</li>
-  									<li><i class="fa fa-close red"></i> &nbsp; &nbsp;No Support</li>
-  								</ul>
-  							</div> -->
   						</div><!--/ item -->
   					</div>
 
@@ -142,23 +132,13 @@
   								<!-- Heading -->
   								<h3>Track Progress</h3>
   								<!-- Button -->
-  								<a href="#" class="btn lbluelanding"><strong>Learn More...</strong></a>
+  								<a href="#track" class="btn lbluelanding"><strong>Learn More...</strong></a>
   							</div>
   							<div class="clearfix"></div>
   							<!-- Ui-para -->
   							<div class="ui-para br-lblue">
   								<p>Simply input completed activities and see current progress toward individual goals.</p>
   							</div>
-  							<!-- Ui-list -->
-  							<!-- <div class="ui-list">
-  								<ul class="list-unstyled">
-  									<li><i class="fa fa-check green"></i><strong> &nbsp; &nbsp;Storage - 12GB</strong></li>
-  									<li><i class="fa fa-check green"></i> &nbsp; &nbsp;Bandwidth - 2GB</li>
-  									<li><i class="fa fa-check green"></i> &nbsp; &nbsp;Email-Id - 10</li>
-  									<li><i class="fa fa-check green"></i> &nbsp; &nbsp;Sql-Database - 10</li>
-  									<li><i class="fa fa-close red"></i> &nbsp; &nbsp;Email - Support</li>
-  								</ul>
-  							</div> -->
   						</div><!--/ item -->
   					</div>
 
@@ -170,23 +150,13 @@
   								<!-- Heading -->
   								<h3>Reward Achievements</h3>
   								<!-- UI-button -->
-  								<a href="#" class="btn greenlanding"><strong>Learn more...</strong></a>
+  								<a href="#rewards" class="btn greenlanding"><strong>Learn more...</strong></a>
   							</div>
   							<div class="clearfix"></div>
   							<!-- Blockquote -->
   							<div  class="ui-para br-green">
   								<p>Set rewards for reaching goals and use badges to encourage participation.</p>
   							</div>
-  							<!-- Ui-list -->
-  							<!-- <div class="ui-list">
-  								<ul class="list-unstyled">
-  									<li><i class="fa fa-check green"></i> &nbsp; &nbsp;<strong>Storage - 15GB</strong></li>
-  									<li><i class="fa fa-check green"></i> &nbsp; &nbsp;Bandwidth - 3GB</li>
-  									<li><i class="fa fa-check green"></i> &nbsp; &nbsp;Email-id - 15</li>
-  									<li><i class="fa fa-check green"></i> &nbsp; &nbsp;Sql-Database - 12</li>
-  									<li><i class="fa fa-check green"></i> &nbsp; &nbsp;Phone - Support</li>
-  								</ul>
-  							</div> -->
   						</div><!--/ item -->
   					</div>
   				</div>
@@ -195,7 +165,7 @@
 
     <!-- START THE FEATURETTES -->
 
-    <hr class="featurette-divider ui-para br-red">
+    <hr id='setgoals' class="featurette-divider ui-para br-red">
 
     <div class="row featurette">
       <div class="col-md-7">
@@ -207,7 +177,7 @@
       </div>
     </div>
 
-    <hr class="featurette-divider ui-para br-lblue">
+    <hr id='track' class="featurette-divider ui-para br-lblue">
 
       <div class="row featurette">
         <div class="container-fluid col-md-5 hidden-xxs">
@@ -219,7 +189,7 @@
         </div>
       </div>
 
-    <hr class="featurette-divider ui-para br-green">
+    <hr id='rewards' class="featurette-divider ui-para br-green">
 
     <div class="row featurette">
       <div class="col-md-7">
@@ -238,7 +208,7 @@
 
     </main>
     <footer>
-      <p class="pull-right"><a href="index.html">Back to top</a></p>
+      <p class="pull-right"><a href="#top">Back to top</a></p>
       <p>&copy; 2016 GitUp, Inc.</p>
     </footer>
 
@@ -302,9 +272,7 @@
           });
         });
       </script>
-
-
-
+      
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
     <script>
       (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=

@@ -1346,7 +1346,7 @@ a.ui-heading.clearfix.update {
 /* Ui-head */
 /* heading */
 .ui-2 .ui-item .ui-head h3{
-	float:left;
+	/*float:left;*/
 	font-size:22px;
 	font-weight:normal;
 }
