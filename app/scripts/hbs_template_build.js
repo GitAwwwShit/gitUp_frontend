@@ -26,8 +26,6 @@ function displayTemplate(selector, partial, context) {
   $(selector).html(template(context));
 }
 
-// var data = {};
-
 
 Promise.all([
   // first ajax request
@@ -38,7 +36,8 @@ Promise.all([
   // partial
   promisifyPartial({ name: 'dashboard', file: '/templates/dashboard.hbs' }),
   promisifyPartial({ name: 'goalUpdate', file: '/templates/goalUpdate.hbs' }),
-  promisifyPartial({ name: 'newChild', file: '/templates/newChild.hbs' })
+  promisifyPartial({ name: 'newChild', file: '/templates/newChild.hbs' }),
+  promisifyPartial({ name: 'goalSummary', file: '/templates/goalSummaryInsert.hbs' })
   // Document Ready?
   // promiseToLoad()
 ]).then(function(api) {

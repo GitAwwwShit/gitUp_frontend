@@ -101,7 +101,7 @@
   <!-- UI - X Ends -->
   {{#each cGoals}}
   <!-- UI - 179 test test test test -->
-  <div class="ui-179 activity" data-RemoveGoal={{id}}>
+  <div class="ui-179 activity cGoal" data-childID-for-cGoal={{../id}} data-RemoveGoal={{id}}>
     <div class="container">
 
         <div class="row">
@@ -294,7 +294,7 @@
   								</div>
                   <!-- record time/amount -->
   								<div class="form-group">
-  									<input type="reward" class="form-control" placeholder="Time to Goal? Reps to Goal?">
+  									<input type="reward" class="form-control" data-gAmount="{{id}}" placeholder="Time to Goal? Reps to Goal?">
   								</div>
   								<!-- Reward -->
                   <!-- Select the Activity -->
@@ -302,11 +302,11 @@
 
                     <!-- Enter the Reward -->
     								<div class="form-group">
-    									<input type="reward" class="form-control" placeholder="Enter the Reward">
+    									<input type="reward" class="form-control" data-gReward="{{id}}" placeholder="Enter the Reward">
     								</div>
 
   								<!-- Button -->
-  								<button type="submit" class="btn btn-block btn-green">Add Goal</button>
+  								<button type="submit" data-childID-for-cGoal="{{id}}" class="btn btn-block btn-green add-cGoal">Add Goal</button>
   							</form>
   						</div>
       </div>
