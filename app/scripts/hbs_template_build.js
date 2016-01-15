@@ -1,10 +1,16 @@
 var appVars = {
-  host: "http://huber007.dyndns.org:3000"
+  host: "http://127.0.0.1:3000"
 }
 var activities = {}
-Handlebars.registerHelper("activities", function(id) {
-  return activities[id];
+Handlebars.registerHelper("activities_name", function(id) {
+  console.log("activities_name", id)
+  return id ? activities[id].activity_name : "Goal";
 });
+
+Handlebars.registerHelper("activities_img", function(id) {
+  return id ? activities[id].activity_image: '/img/activities/volleyball.png';
+});
+
 
 function promisifyPartial(partial) {
   return new Promise(function(success, failure) {
@@ -69,7 +75,7 @@ Promise.all([
   }).done(function(result){
       activities = {}
       for (var i = 0; i < result.length; i++) {
-        activities[result[i].id]= result[i].activity_name;
+        activities[result[i].id]= result[i];
       }
       //data.activityObj = activities;
     displayTemplate("#dashboard", 'dashboard', data);
