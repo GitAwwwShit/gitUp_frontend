@@ -105,32 +105,33 @@ $(document).on('click', '#addChild', function(e) {
   .done(function(){
     $.ajax(appVars.host + '/api')
     .done(function(apiData){
-      var newKid = Object.keys(apiData.children).pop()
-      console.log(apiData.children[newKid]);
-      insertTemplate($('#children-holder'), 'newChild', apiData.children[newKid]);
+      var newKidID = Object.keys(apiData.children).pop()
+      var newKid = apiData.children[newKidID];
+      newKid.titles = {
+            one: 'Little Shit',
+            two: 'SOB',
+            three: 'Mistake 1',
+            four: 'Love Child'
+          }
+      console.log(newKid);
+      insertTemplate($('#children-holder'), 'newChild', newKid);
     })
   })
 })
 
-// ajax to insert child
-$(document).on('click', '#addChild', function(e) {
-  var childAdd = {};
-  childAdd.first_name = $('input[type=childName]').val();
-  childAdd.gender = 'unisex';
-  childAdd.dob = $('input[type=childDOB]').val();
-  childAdd.user_id = $('img[id=profile-pic]').attr("data-user-id");
-  console.log(childAdd);
+// ajax to delete child
+$(document).on('click', '.remove-child', function(e) {
+  console.log(this);
+  var childID = $(this).attr("data-childIDremove");
+  console.log(childID);
   e.preventDefault();
-  $.ajax(appVars.host + '/api/child', {
-    data: childAdd,
-    type: 'POST'
+  $.ajax(appVars.host + '/api/delete/'+childID, {
+    data: {},
+    type: 'DELETE'
   })
-  .done(function(){
-    $.ajax(appVars.host + '/api')
-    .done(function(apiData){
-      var newKid = Object.keys(apiData.children).pop()
-      console.log(apiData.children[newKid]);
-      insertTemplate($('#children-holder'), 'newChild', apiData.children[newKid]);
-    })
+  .done(function(removedKid){
+    console.log(removedKid);
   })
+  $('div[data-RemoveChild='+childID+']').remove();
+  console.log($('div[data-RemoveChild='+childID+']').remove())
 })

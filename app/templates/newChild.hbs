@@ -1,4 +1,4 @@
-<div class="child-template">
+<div class="child-template" data-RemoveChild={{id}}>
   <!-- UI - 81 Starts -->
   <div class="ui-81">
     <div class="container">
@@ -13,9 +13,9 @@
               <!-- UserName And Designation -->
               <h2>
                 <a href="#">{{first_name}}</a>
-                <span>{{../shit.titles.one}}</span>
+                <span>{{titles.two}}</span>
               </h2>
-              <button type="submit" class="btn btn-red remove-child pull-right" data-cGoalIDremove="{{id}}">Delete</button>
+              <button type="submit" class="btn btn-red remove-child pull-right" data-childIDremove="{{id}}">Delete</button>
             </div>
             <!-- User Details Ends -->
 

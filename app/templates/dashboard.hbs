@@ -13,7 +13,7 @@
 
 <div id="children-holder">
 {{#each api.children}}
-<div class="child-template">
+<div class="child-template" data-RemoveChild={{id}}>
   <!-- UI - 81 Starts -->
   <div class="ui-81">
     <div class="container">
@@ -30,7 +30,7 @@
                 <a href="#">{{first_name}}</a>
                 <span>{{../shit.titles.one}}</span>
               </h2>
-              <button type="submit" class="btn btn-red remove-child pull-right" data-cGoalIDremove="{{id}}">Delete</button>
+              <button type="submit" class="btn btn-red remove-child pull-right" data-childIDremove="{{id}}">Delete</button>
             </div>
             <!-- User Details Ends -->
 
