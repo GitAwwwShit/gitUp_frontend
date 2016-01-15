@@ -86,7 +86,7 @@
   <!-- UI - X Ends -->
   {{#each cGoals}}
   <!-- UI - 179 test test test test -->
-  <div class="ui-179 activity" data-RemoveGoal={{id}}>
+  <div class="ui-179 activity cGoal" data-childID-for-cGoal={{../id}} data-RemoveGoal={{id}}>
     <div class="container">
 
         <div class="row">
@@ -281,61 +281,18 @@
                   </div>
                   <!-- record time/amount -->
   								<div class="form-group">
-  									<input type="reward" class="form-control" placeholder="Time to Goal? Reps to Goal?">
+  									<input type="reward" class="form-control" data-gAmount="{{id}}" placeholder="Time to Goal? Reps to Goal?">
   								</div>
   								<!-- Reward -->
                   <!-- Select the Activity -->
                   <div class="form-group">
-
-                    <!-- UI X -->
-                      <div class="ui-42">
-
-                        <div class="container">
-
-                          <div class="row">
-
-                            <div class="col-md-6">
-                              <!-- Drop down menu -->
-                              <div class="dd-menu dd-one">
-                                <a class="dd-link" href="#">
-                                  <!-- Heading -->
-                                  <h3>Select the Reward</h3>
-                                  <div class="clearfix"></div>
-                                </a>
-                                <div class="dd-dropdown">
-                                  <ul class="list-unstyled" role="menu">
-                                    <li>
-                                      <a href="#">
-                                        Youtube Time
-                                      </a>
-                                    </li>
-                                    <li>
-                                      <a href="#">
-                                        Ipad Time
-                                      </a>
-                                    </li>
-                                    <li>
-                                      <a href="#">
-                                        Netflix Time
-                                      </a>
-                                    </li>
-                                    <li>
-                                      <a href="#">
-                                        Cookies
-                                      </a>
-                                    </li>
-                                  </ul>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
+                    <input type="reward" class="form-control" data-gReward="{{id}}" placeholder="Enter the Reward">
+                  </div>
 
   								<!-- Button -->
-  								<button type="submit" class="btn btn-block btn-green">Add Goal</button>
+  								<button type="submit" data-childID-for-cGoal="{{id}}" class="btn btn-block btn-green add-cGoal">Add Goal</button>
   							</form>
-  						</div>
+
       </div>
       <!-- Item Ends -->
     </div>
