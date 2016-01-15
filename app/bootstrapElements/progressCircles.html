@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>UI Design</title>
+		<!-- Description, Keywords and Author -->
+		<meta name="description" content="Your description">
+		<meta name="keywords" content="Your,Keywords">
+		<meta name="author" content="ResponsiveWebInc">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<!-- Styles -->
+		<!-- Bootstrap CSS -->
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<!-- Font awesome CSS -->
+		<link href="css/font-awesome.min.css" rel="stylesheet">
+
+
+		<!-- Main CSS -->
+		<link href="css/style-264.css" rel="stylesheet">
+
+		<!-- Favicon -->
+		<link rel="shortcut icon" href="#">
+	</head>
+
+	<body>
+
+
+		<!-- UI 264 -->
+		<div class="ui-264">
+
+			<div class="container">
+				<div class="row">
+					<div class="col-md-3 col-sm-6">
+						<!-- UI content -->
+						<div class="block-content">
+							<!-- Filling block -->
+							<div class="fill-container">
+								<span class="fill-limit red" data-limit="75"></span>
+								<!-- Circle fill by color background -->
+								<div class="filler-outer">
+									<div class="filler bg-red"><img class="img-responsive curve-img" src="img/ui-264/curve.png" alt="" /></div>
+								</div>
+							</div>
+							<!-- Heading -->
+							<h3>WordPress</h3>
+							<!-- Paragraph -->
+							<p>Lorem ipsum dolor sit amet, cones dolor sit amet lecture adipose.</p>
+						</div>
+					</div>
+					<div class="col-md-3 col-sm-6">
+						<!-- UI content -->
+						<div class="block-content">
+							<!-- Filling block -->
+							<div class="fill-container">
+								<span class="fill-limit green" data-limit="80"></span>
+								<!-- Circle fill by color background -->
+								<div class="filler-outer">
+									<div class="filler bg-green"><img class="img-responsive" src="img/ui-264/curve.png" alt="" /></div>
+								</div>
+							</div>
+							<!-- Heading -->
+							<h3>Drupal</h3>
+							<!-- Paragraph -->
+							<p>Lorem ipsum dolor sit amet, cones dolor sit amet lecture adipose.</p>
+						</div>
+					</div>
+					<div class="col-md-3 col-sm-6">
+						<!-- UI content -->
+						<div class="block-content">
+							<!-- Filling block -->
+							<div class="fill-container">
+								<span class="fill-limit lblue" data-limit="95"></span>
+								<!-- Circle fill by color background -->
+								<div class="filler-outer">
+									<div class="filler bg-lblue"><img class="img-responsive" src="img/ui-264/curve.png" alt="" /></div>
+								</div>
+							</div>
+							<!-- Heading -->
+							<h3>Codeigniter</h3>
+							<!-- Paragraph -->
+							<p>Lorem ipsum dolor sit amet, cones dolor sit amet lecture adipose.</p>
+						</div>
+					</div>
+					<div class="col-md-3 col-sm-6">
+						<!-- UI content -->
+						<div class="block-content">
+							<!-- Filling block -->
+							<div class="fill-container">
+								<span class="fill-limit orange" data-limit="65"></span>
+								<!-- Circle fill by color background -->
+								<div class="filler-outer">
+									<div class="filler bg-orange"><img class="img-responsive" src="img/ui-264/curve.png" alt="" /></div>
+								</div>
+							</div>
+							<!-- Heading -->
+							<h3>Designing</h3>
+							<!-- Paragraph -->
+							<p>Lorem ipsum dolor sit amet, cones dolor sit amet lecture adipose.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+		<!-- Javascript files -->
+		<!-- jQuery -->
+		<script src="js/jquery.js"></script>
+		<!-- Bootstrap JS -->
+		<script src="js/bootstrap.min.js"></script>
+		<!-- Placeholder JS -->
+		<script src="js/placeholder.js"></script>
+		<!-- Respond JS for IE8 -->
+		<script src="js/respond.min.js"></script>
+		<!-- HTML5 Support for IE -->
+		<script src="js/html5shiv.js"></script>
+		<script>
+			$(function() {
+
+				setTimeout(function(){
+
+					$('.fill-limit').each(function() {
+						var me = $(this);
+						var perc = me.attr("data-limit");
+						var current_perc = 10;
+
+						if(!$(this).hasClass('stop')){
+
+							var progress = setInterval(function() {
+
+								if (current_perc>=perc) {
+									clearInterval(progress);
+								} else {
+									current_perc +=1;
+									me.parent().children().children('.filler').css('height', (current_perc)+'%');
+									me.html(current_perc+'<span>%</span>');
+								}
+
+							}, 6);
+
+							me.addClass('stop');
+							me.parent().children().children('.filler').addClass('stop');
+
+						}
+
+					});
+
+				}, 0);
+
+			});
+
+		</script>
+	</body>
+</html>
