@@ -52,12 +52,12 @@ $(document).on('keypress', '.update-goal', function(e) {  // finish putting IDs 
       newAmount: newAmount,
       newPercent: Math.trunc(newPercent)
     };
-    $.ajax(appVars.host + '/api', {             // what's our api route for update goal?
+    $.ajax(appVars.host + '/api/entry/'+cGoalID+'/'+addAmount, {             // what's our api route for update goal?
       data: goalUpdate,
       type: 'POST'
     })
     .done(function(goalUpdateData){
-
+      console.log(goalUpdateData);
     })
     // console.log('this: '+this);
     console.log(removePB);
@@ -83,10 +83,33 @@ $(document).on('click', '.remove-goal', function(e) {
     type: 'DELETE'
   })
   .done(function(goalRemoveData){
-
+    console.log(goalRemoveData);
   })
   $('div[data-RemoveGoal='+cGoalID+']').remove();
   $('div[data-RemoveGoalSummary='+cGoalID+']').remove();
+})
+
+// ajax to insert child
+$(document).on('click', '#addChild', function(e) {
+  var childAdd = {};
+  childAdd.first_name = $('input[type=childName]').val();
+  childAdd.gender = 'unisex';
+  childAdd.dob = $('input[type=childDOB]').val();
+  childAdd.user_id = $('img[id=profile-pic]').attr("data-user-id");
+  console.log(childAdd);
+  e.preventDefault();
+  $.ajax(appVars.host + '/api/child', {
+    data: childAdd,
+    type: 'POST'
+  })
+  .done(function(){
+    $.ajax(appVars.host + '/api')
+    .done(function(apiData){
+      var newKid = Object.keys(apiData.children).pop()
+      console.log(apiData.children[newKid]);
+      insertTemplate($('#children-holder'), 'newChild', apiData.children[newKid]);
+    })
+  })
 })
 
 // ajax to insert child
