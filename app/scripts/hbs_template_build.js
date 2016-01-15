@@ -1,6 +1,10 @@
 var appVars = {
   host: "http://127.0.0.1:3000"
 }
+var activities = {}
+Handlebars.registerHelper("activities", function(id) {
+  return activities[id];
+});
 
 function promisifyPartial(partial) {
   return new Promise(function(success, failure) {
@@ -60,7 +64,16 @@ Promise.all([
   };
   data.api = api[0];
   console.log(data);
-  displayTemplate("#dashboard", 'dashboard', data);
+  $.ajax({
+    url: appVars.host + '/api/activities',
+    method: 'get'
+  }).done(function(result){
+      activities = {}
+      for (var i = 0; i < result.length; i++) {
+        activities[result[i].id]= result[i].activity_name;
+      }
+    displayTemplate("#dashboard", 'dashboard', data);
+  })
 });
 
 
