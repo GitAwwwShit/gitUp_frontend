@@ -180,3 +180,5 @@ gulp.task('build', ['html', 'images', 'fonts', 'extras'], () => {
 gulp.task('default', ['clean'], () => {
   gulp.start('build');
 });
+
+module.exports = gulp;

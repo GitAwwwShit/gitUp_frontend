@@ -1,5 +1,5 @@
 var appVars = {
-  host: "http://huber007.dyndns.org:3000"
+  host: "http://git-up.herokuapp.com"
 }
 var activities = {}
 Handlebars.registerHelper("activities_name", function(id) {
