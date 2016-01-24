@@ -181,7 +181,7 @@ gulp.task('build', ['html', 'images', 'fonts', 'extras'], () => {
 gulp.task('delpub', del.bind(null, ['../public'], {force: true}));
 
 // as submodule deploy
-gulp.task('copyup', ['default'], () => {
+gulp.task('copyup', ['delpub'], () => {
   return gulp.src('dist/**/*.*', { base: './dist' })
     .pipe($.plumber())
     .pipe(gulp.dest('../public'))
