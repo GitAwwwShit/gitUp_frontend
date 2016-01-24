@@ -177,6 +177,16 @@ gulp.task('build', ['html', 'images', 'fonts', 'extras'], () => {
   return gulp.src('dist/**/*').pipe($.size({title: 'build', gzip: true}));
 });
 
+// delete public
+gulp.task('delpub', del.bind(null, ['../public']));
+
+// as submodule deploy
+gulp.task('copyup', ['default', 'delpub']. () => {
+  return gulp.src('dist')
+    .pipe($.plumber())
+    .pipe(gulp.dest('../public'))
+});
+
 gulp.task('default', ['clean'], () => {
   gulp.start('build');
 });
