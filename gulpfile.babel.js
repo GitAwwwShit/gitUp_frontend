@@ -178,11 +178,11 @@ gulp.task('build', ['html', 'images', 'fonts', 'extras'], () => {
 });
 
 // delete public
-gulp.task('delpub', del.bind(null, ['../public']));
+gulp.task('delpub', del.bind(null, ['../public'], {force: true}));
 
 // as submodule deploy
-gulp.task('copyup', ['default', 'delpub']. () => {
-  return gulp.src('dist')
+gulp.task('copyup', ['default'], () => {
+  return gulp.src('dist/**/*.*', { base: './dist' })
     .pipe($.plumber())
     .pipe(gulp.dest('../public'))
 });
