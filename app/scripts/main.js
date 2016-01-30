@@ -166,10 +166,12 @@ $(document).on('click', '.add-cGoal', function(e) {
   })
   .done(function(results){
     console.log(results);
-    // $.ajax(appVars.host + '/api')
-    // .done(function(apiData){
-    //   var newKidID = Object.keys(apiData.children).pop()
-    //
-    // })
+    $.ajax(appVars.host + '/api')
+    .done(function(apiData){
+      var newKidID = Object.keys(apiData.children).pop();
+      console.log(newKidID);
+      console.log(apiData.children.pop());
+
+    })
   })
 })
