@@ -123,9 +123,7 @@ $(document).on('click', '#addChild', function(e) {
           for (var i = 0; i < result.length; i++) {
             activities[result[i].id]= result[i];
           }
-          //data.activityObj = activities;
-        displayTemplate("#children-holder", 'newChild', data);
-        var activitySelect = $('.activitySelect')
+        var activitySelect = $('.activitySelectNewChild')
         for (var i = 0; i < result.length; i++) {
           activitySelect.append("<option value='"+result[i].id+"'>"+result[i].activity_name+"</option>")
         }
