@@ -171,9 +171,13 @@ $(document).on('click', '.add-cGoal', function(e) {
       var KidID = apiData.children[childId].id;
       console.log(KidID);
       console.log(apiData.children);
-      var newCgoalID = Object.keys(apiData.children[KidID].cGoals).pop()
-      console.log(apiData.children[KidID].cGoals[newCgoalID])
+      var newCgoalID = Object.keys(apiData.children[KidID].cGoals).pop();
+      var newCgoalData = apiData.children[KidID].cGoals[newCgoalID];
+      newCgoalData.child_FN = apiData.children[KidID].first_name;
+      console.log(apiData.children[KidID].first_name);
+      console.log(newCgoalData);
 
+      insertTemplate($('div[data-inerstNewGoal='+childId+']'), 'newCgoal', newCgoalData);
 
     })
   })

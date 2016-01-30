@@ -47,7 +47,8 @@ Promise.all([
   promisifyPartial({ name: 'dashboard', file: '/templates/dashboard.hbs' }),
   promisifyPartial({ name: 'goalUpdate', file: '/templates/goalUpdate.hbs' }),
   promisifyPartial({ name: 'newChild', file: '/templates/newChild.hbs' }),
-  promisifyPartial({ name: 'goalSummary', file: '/templates/goalSummaryInsert.hbs' })
+  promisifyPartial({ name: 'goalSummary', file: '/templates/goalSummaryInsert.hbs' }),
+  promisifyPartial({ name: 'newCgoal', file: '/templates/newCgoal.hbs' })
   // Document Ready?
   // promiseToLoad()
 ]).then(function(api) {
