@@ -1,5 +1,5 @@
 var appVars = {
-  host: "http://git-up.herokuapp.com"
+  host: "https://git-up.herokuapp.com"
 }
 
 // fix Facebook hash
