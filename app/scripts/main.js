@@ -168,9 +168,12 @@ $(document).on('click', '.add-cGoal', function(e) {
     console.log(results);
     $.ajax(appVars.host + '/api')
     .done(function(apiData){
-      var newKidID = Object.keys(apiData.children).pop();
-      console.log(newKidID);
-      console.log(apiData.children.pop());
+      var KidID = apiData.children[childId].id;
+      console.log(KidID);
+      console.log(apiData.children);
+      var newCgoalID = Object.keys(apiData.children[KidID].cGoals).pop()
+      console.log(apiData.children[KidID].cGoals[newCgoalID])
+
 
     })
   })
