@@ -33,13 +33,13 @@ function insertTemplate(selector, partial, context) {
 $(document).on('keypress', '.update-goal', function(e) {  // finish putting IDs in dashboard template and filling in two variables below
   console.log(this);
   var cGoalID = $(this).attr("data-cGoalIDupdate");
-  var removePB = $('div[data-progressUpdate='+cGoalID+']');
-  var removePB2 = $('div[data-progressUpdate2='+cGoalID+']');
+  var removePB = $('div[data-progressupdate='+cGoalID+']');
+  var removePB2 = $('div[data-progressupdate2='+cGoalID+']');
   var insertPB = $('div[data-progressInsert='+cGoalID+']');
   var insertPB2 = $('div[data-progressInsert2='+cGoalID+']');
-  var currentAmount = parseFloat(removePB.attr("aria-valuenow"));
-  var goalAmount = removePB.attr("aria-valuemax");
-  var currentPercent = removePB.attr('style');
+  var currentAmount = parseFloat(removePB2.attr("aria-valuenow"));
+  var goalAmount = removePB2.attr("aria-valuemax");
+  var currentPercent = removePB2.attr('style');
   if (e.which == 13) {
     e.preventDefault();
     var addAmount = parseFloat($(this).val());
@@ -60,7 +60,7 @@ $(document).on('keypress', '.update-goal', function(e) {  // finish putting IDs 
       console.log(goalUpdateData);
     })
     // console.log('this: '+this);
-    console.log(removePB);
+    console.log(removePB2);
     console.log(insertPB[0]);
     console.log('currentAmount: '+currentAmount);
     console.log('addAmount: '+addAmount);
