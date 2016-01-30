@@ -115,6 +115,21 @@ $(document).on('click', '#addChild', function(e) {
           }
       console.log(newKid);
       insertTemplate($('#children-holder'), 'newChild', newKid);
+      $.ajax({
+        url: appVars.host + '/api/activities',
+        method: 'get'
+      }).done(function(result){
+          activities = {}
+          for (var i = 0; i < result.length; i++) {
+            activities[result[i].id]= result[i];
+          }
+          //data.activityObj = activities;
+        displayTemplate("#children-holder", 'newChild', data);
+        var activitySelect = $('.activitySelect')
+        for (var i = 0; i < result.length; i++) {
+          activitySelect.append("<option value='"+result[i].id+"'>"+result[i].activity_name+"</option>")
+        }
+      })
     })
   })
 })

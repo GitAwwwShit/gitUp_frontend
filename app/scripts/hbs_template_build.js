@@ -69,6 +69,7 @@ Promise.all([
   };
   data.api = api[0];
   console.log(data);
+
   $.ajax({
     url: appVars.host + '/api/activities',
     method: 'get'
@@ -86,8 +87,6 @@ Promise.all([
   })
 });
 
-
-// titles: ['Little Shit', 'SOB', 'Mistake 1', 'Love Child'],
 
 // Handlebars.registerHelper('compare', function(val1, val2, options) {
 //   if (val1 == val2) return options.fn(this);
