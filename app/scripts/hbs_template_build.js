@@ -54,8 +54,8 @@ Promise.all([
   var data = {};
   data.shit = {
     titles: {
-      one: 'Little Shit',
-      two: 'SOB',
+      one: 'Our favorite',
+      two: 'Actually our favorite',
       three: 'Mistake 1',
       four: 'Love Child'
     },

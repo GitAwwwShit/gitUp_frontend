@@ -108,8 +108,8 @@ $(document).on('click', '#addChild', function(e) {
       var newKidID = Object.keys(apiData.children).pop()
       var newKid = apiData.children[newKidID];
       newKid.titles = {
-            one: 'Little Shit',
-            two: 'SOB',
+            one: 'Our favorite',
+            two: 'Actually our favorite',
             three: 'Mistake 1',
             four: 'Love Child'
           }
