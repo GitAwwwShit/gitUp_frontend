@@ -27,7 +27,7 @@
                   <!-- Item -->
                   <div class="uis-item">
                     <!-- Heading -->
-                    <h4>Goal {{id}} </h4>
+                    <h4>{{activities_name activity_id}} </h4>
                     <!-- Progress -->
                     <div class="progress" data-progressInsert={{id}}>
                       <!-- Progress Bar -->
@@ -98,9 +98,9 @@
         <div class="ui-user clearfix">
           <!-- User Image -->
           <div class="pull-left">
-            <a href="#"><img src="img/activities/{{goal_id}}.png" alt="" class="img-responsive" /></a>
+            <a href="#"><img src="{{activities_img activity_id}}" alt="" class="img-responsive" /></a>
             <!-- UserName And Designation -->
-            <h2><a href="#">{{../first_name}}: Goal {{id}}</a></h2>
+            <h2><a href="#">{{../first_name}}: {{activities_name activity_id}}</a></h2>
           </div>
         </div>
         <!-- User Details Ends -->
